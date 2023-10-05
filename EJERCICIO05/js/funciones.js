@@ -1,5 +1,6 @@
-function comprobarDNI(dni){
-
+function comprobarDNI(){
+   let dni = document.getElementById ("in1").value;
+    console.log(dni);
     let correcto = true;
     let letra = dni.charAt(8);
     console.log ("La ultima letra del Dni introducido es " + letra);
@@ -23,15 +24,17 @@ function comprobarDNI(dni){
         }
 
 
-    return correcto;
-
+  
+    if (correcto) document.getElementById ("c2").innerHTML = "El formato de DNI es Correcto";
+    else document.getElementById ("c2").innerHTML =  ("Formato de DNI Incorrecto");
 
                 }
             }
-    var resultado = comprobarDNI(window.prompt ("Introduce tu DNI"));
 
-    if (resultado) window.alert ("El formato de DNI es Correcto");
-    else window.alert ("Formato de DNI Incorrecto");
+           
+   document.getElementById("b1").addEventListener("click", comprobarDNI);
+         
+
 
 
 
