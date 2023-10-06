@@ -1,6 +1,7 @@
 
 
 function generarRombo (){
+   document.getElementById("c2").innerHTML = ("&nbsp");
 
     filas = document.getElementById ("in1").value;
     console.log ("Numero de filas seleccionadas = " + filas);
@@ -33,7 +34,7 @@ function generarRombo (){
              espaciosinternos+=2;
              document.getElementById("c2").innerHTML += ("*<br>");
              filasmitad--;
-            }while (filasmitad>0)
+            }while (filasmitad>1)
 
             //Hasta aqui imprime la mitad del rombo. Ahora se hace a la inversa.
 
@@ -59,7 +60,7 @@ function generarRombo (){
                     }
                     
                     
-                    while (filasmitad>0)
+                    while (filasmitad>1)
 
                     for (let index = 0; index < espaciosexternos; index++) {
                         document.getElementById("c2").innerHTML += ("&nbsp");
