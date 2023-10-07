@@ -4,6 +4,7 @@
     margin: 4px;
     border: 1px solid black;
     float: left;
+    text-align: center;
 }
 
 h1{
@@ -15,14 +16,14 @@ h3{
 }
 #b1{
     background-color: rgb(180, 240, 220);
-    text-align: center;
+    
     color: rgb(68, 32, 9);
     font-weight: bold;
 }
 
 #in1{
     background-color: aquamarine;
-    text-align: center;
+    
 }
 
 
