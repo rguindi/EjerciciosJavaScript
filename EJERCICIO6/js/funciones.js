@@ -1,6 +1,7 @@
 
 
 function generarRombo (){
+   
    document.getElementById("c2").innerHTML = ("&nbsp");
 
     filas = document.getElementById ("in1").value;
@@ -15,10 +16,10 @@ function generarRombo (){
         for (let index = 0; index < espaciosexternos; index++) {
             document.getElementById("c2").innerHTML += ("&nbsp");
          }
-            espaciosexternos--;
+            
             document.getElementById("c2").innerHTML += ("*<br>");
 
-            filasmitad--;
+            espaciosexternos--;
 
             do{
 

@@ -3,8 +3,11 @@
     height: 300px;
     margin: 4px;
     border: 1px solid black;
+    position: relative;
     float: left;
-    text-align: center;
+    /* text-align: center; */
+
+    
 }
 
 h1{
@@ -25,5 +28,7 @@ h3{
     background-color: aquamarine;
     
 }
-
+body{
+    font-family: 'Courier New', Courier, monospace
+}
 
