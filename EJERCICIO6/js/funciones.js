@@ -1,39 +1,44 @@
 
 
 function generarRombo (){
-   
-   document.getElementById("c2").innerHTML = ("&nbsp");
+
+   rombo="";
+
 
     filas = document.getElementById ("in1").value;
     console.log ("Numero de filas seleccionadas = " + filas);
+    if (filas%2 !=0) filas++;
+    
+    if (filas ==2) rombo="*<br>*"
+    else{
 
     filasmitad = filas/2;
   
     espaciosexternos = filasmitad-1;
-    espaciosinternos = 2;
+    espaciosinternos = 1;
 
     
         for (let index = 0; index < espaciosexternos; index++) {
-            document.getElementById("c2").innerHTML += ("&nbsp");
+            rombo += ("&nbsp");
          }
             
-            document.getElementById("c2").innerHTML += ("*<br>");
+            rombo += ("*<br>");
 
             espaciosexternos--;
 
             do{
 
             for (let index = 0; index < espaciosexternos; index++) {
-                document.getElementById("c2").innerHTML += ("&nbsp");
+                rombo += ("&nbsp");
              }
              espaciosexternos--;
-             document.getElementById("c2").innerHTML += ("*");
+             rombo += ("*");
 
              for (let id = 0; id < espaciosinternos; id++) {
-                document.getElementById("c2").innerHTML += ("&nbsp");
+                rombo += ("&nbsp");
              }
              espaciosinternos+=2;
-             document.getElementById("c2").innerHTML += ("*<br>");
+             rombo += ("*<br>");
              filasmitad--;
             }while (filasmitad>1)
 
@@ -42,21 +47,21 @@ function generarRombo (){
             filasmitad = filas/2;
   
             espaciosexternos = 0;
-            espaciosinternos = filas-1;
+            espaciosinternos = filas-3;
 
                     do{
         
                     for (let index = 0; index < espaciosexternos; index++) {
-                        document.getElementById("c2").innerHTML += ("&nbsp");
+                        rombo += ("&nbsp");
                      }
                      espaciosexternos++;
-                     document.getElementById("c2").innerHTML += ("*");
+                     rombo += ("*");
         
                      for (let id = 0; id < espaciosinternos; id++) {
-                        document.getElementById("c2").innerHTML += ("&nbsp");
+                        rombo += ("&nbsp");
                      }
                      espaciosinternos-=2;
-                     document.getElementById("c2").innerHTML += ("*<br>");
+                     rombo += ("*<br>");
                           filasmitad--;               
                     }
                     
@@ -64,12 +69,16 @@ function generarRombo (){
                     while (filasmitad>1)
 
                     for (let index = 0; index < espaciosexternos; index++) {
-                        document.getElementById("c2").innerHTML += ("&nbsp");
+                        rombo += ("&nbsp");
                      }
                         espaciosexternos++;
-                        document.getElementById("c2").innerHTML += ("*<br>");
+                        rombo += ("*<br>");
             
                         filasmitad++;
+
+                  }
+
+                        document.getElementById("c2").innerHTML = rombo;
 }
  
  
