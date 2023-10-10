@@ -1,249 +1,291 @@
-function generar (){
+function generar() {
 
-// EMPEZAMOS GENERANDO EL ROMBO HUECO (Código del ehercicio 6)
-
-
-
-rombo="<h2>Rombo hueco</h2>";
-
-
-filas = document.getElementById ("in1").value;
-console.log ("Numero de filas seleccionadas = " + filas);
-
-if (filas%2 !=0) filas++;
-    
-if (filas ==2) rombo="*<br>*"
-else{
-
-filasmitad = filas/2;
-
-espaciosexternos = filasmitad-1;
-espaciosinternos = 1;
+   caracterlineas = document.getElementById("in2").value;
+   caracterlineas = caracterlineas.charAt(0);
+   caracterrelleno = document.getElementById("in3").value;
+   caracterrelleno = caracterrelleno.charAt(0);
+   // EMPEZAMOS GENERANDO EL ROMBO HUECO (Código del ehercicio 6)
 
 
-    for (let index = 0; index < espaciosexternos; index++) {
-        rombo += ("&nbsp");
-     }
-        
-        rombo += ("*<br>");
 
-        espaciosexternos--;
+   rombo = "<h2>Rombo hueco</h2>";
 
-        do{
 
-        for (let index = 0; index < espaciosexternos; index++) {
+   filas = document.getElementById("in1").value;
+   console.log("Numero de filas seleccionadas = " + filas);
+
+   if (filas % 2 != 0) filas++;
+
+   if (filas == 2) rombo = caracterlineas+"<br>"+caracterlineas;
+   else {
+
+      filasmitad = filas / 2;
+
+      espaciosexternos = filasmitad - 1;
+      espaciosinternos = 1;
+
+
+      for (let index = 0; index < espaciosexternos; index++) {
+         rombo += ("&nbsp");
+      }
+
+      rombo += (caracterlineas+"<br>");
+
+      espaciosexternos--;
+
+      do {
+
+         for (let index = 0; index < espaciosexternos; index++) {
             rombo += ("&nbsp");
          }
          espaciosexternos--;
-         rombo += ("*");
+         rombo += (caracterlineas);
 
          for (let id = 0; id < espaciosinternos; id++) {
             rombo += ("&nbsp");
          }
-         espaciosinternos+=2;
-         rombo += ("*<br>");
+         espaciosinternos += 2;
+         rombo += (caracterlineas+"<br>");
          filasmitad--;
-        }while (filasmitad>1)
+      } while (filasmitad > 1)
 
-        //Hasta aqui imprime la mitad del rombo. Ahora se hace a la inversa.
+      //Hasta aqui imprime la mitad del rombo. Ahora se hace a la inversa.
 
-        filasmitad = filas/2;
+      filasmitad = filas / 2;
 
-        espaciosexternos = 0;
-        espaciosinternos = filas-3;
+      espaciosexternos = 0;
+      espaciosinternos = filas - 3;
 
-                do{
-    
-                for (let index = 0; index < espaciosexternos; index++) {
-                    rombo += ("&nbsp");
-                 }
-                 espaciosexternos++;
-                 rombo += ("*");
-    
-                 for (let id = 0; id < espaciosinternos; id++) {
-                    rombo += ("&nbsp");
-                 }
-                 espaciosinternos-=2;
-                 rombo += ("*<br>");
-                      filasmitad--;               
-                }
-                
-                
-                while (filasmitad>1)
+      do {
 
-                for (let index = 0; index < espaciosexternos; index++) {
-                    rombo += ("&nbsp");
-                 }
-                    espaciosexternos++;
-                    rombo += ("*<br>");
-        
-                    filasmitad++;
+         for (let index = 0; index < espaciosexternos; index++) {
+            rombo += ("&nbsp");
+         }
+         espaciosexternos++;
+         rombo += (caracterlineas);
 
-                }
-
-    document.getElementById("rombohueco").innerHTML = rombo;
-
-// DIBUJAMOS UN CUADRADO HUECO
+         for (let id = 0; id < espaciosinternos; id++) {
+            rombo += ("&nbsp");
+         }
+         espaciosinternos -= 2;
+         rombo += (caracterlineas+"<br>");
+         filasmitad--;
+      }
 
 
-    cuadrado="<h2>Cuadrado hueco</h2>";
-    filas = document.getElementById ("in1").value;
+      while (filasmitad > 1)
 
-    //Primera linea del cuadrado
-                for (let index = 0; index < filas; index++) {
-                    cuadrado += "*";                
-                }
-                cuadrado += "<br>";
-                
-    //Relleno del cuadrado
+      for (let index = 0; index < espaciosexternos; index++) {
+         rombo += ("&nbsp");
+      }
+      espaciosexternos++;
+      rombo += (caracterlineas+"<br>");
 
-                for (let index = 0; index < filas -2; index++) {
-                   cuadrado+="*"
-                 
-                   for (let index = 0; index < filas -2; index++) {
-                    cuadrado += "&nbsp"
-                  }
-                  cuadrado+="*<br>"
-                    
-                }
+      filasmitad++;
+
+   }
+
+   document.getElementById("rombohueco").innerHTML = rombo;
+
+   // DIBUJAMOS UN CUADRADO HUECO
 
 
+   cuadrado = "<h2>Cuadrado hueco</h2>";
+   filas = document.getElementById("in1").value;
 
-    //Última linea del cuadrado
-                for (let index = 0; index < filas; index++) {
-                    cuadrado += "*";                
-                }
+   //Primera linea del cuadrado
+   for (let index = 0; index < filas; index++) {
+      cuadrado += caracterlineas;
+   }
+   cuadrado += "<br>";
 
+   //Relleno del cuadrado
 
-                document.getElementById("cuadradohueco").innerHTML = cuadrado;
+   for (let index = 0; index < filas - 2; index++) {
+      cuadrado += caracterlineas;
 
-// DIBUJAMOS UN ROMBO A COLOR
+      for (let index = 0; index < filas - 2; index++) {
+         cuadrado += "&nbsp";
+      }
+      cuadrado += caracterlineas+"<br>";
 
-color = document.getElementById ("in4").value;
-console.log (color);
-
-romboacolor="<h2>Rombo a color</h2>";
-
-
-filas = document.getElementById ("in1").value;
-console.log ("Numero de filas seleccionadas = " + filas);
-
-if (filas%2 !=0) filas++;
-    
-if (filas ==2) romboacolor="*<br>*"
-else{
-
-filasmitad = filas/2;
-
-espaciosexternos = filasmitad-1;
-espaciosinternos = 1;
+   }
 
 
-    for (let index = 0; index < espaciosexternos; index++) {
-        romboacolor += ("&nbsp");
-     }
-     
 
-        romboacolor += ("*<br>");
+   //Última linea del cuadrado
+   for (let index = 0; index < filas; index++) {
+      cuadrado += caracterlineas;
+   }
 
-        espaciosexternos--;
 
-        do{
+   document.getElementById("cuadradohueco").innerHTML = cuadrado;
 
-        
+   // DIBUJAMOS UN ROMBO A COLOR
 
-        for (let index = 0; index < espaciosexternos; index++) {
+   color = document.getElementById("in4").value;
+
+   console.log(color);
+
+   romboacolor = "<h2>Rombo a color</h2>";
+
+
+   filas = document.getElementById("in1").value;
+   console.log("Numero de filas seleccionadas = " + filas);
+
+   if (filas % 2 != 0) filas++;
+
+   if (filas == 2) romboacolor = caracterlineas + "<br>" + caracterlineas;
+   else {
+
+      filasmitad = filas / 2;
+
+      espaciosexternos = filasmitad - 1;
+      espaciosinternos = 1;
+
+
+      for (let index = 0; index < espaciosexternos; index++) {
+         romboacolor += ("&nbsp");
+      }
+
+
+      romboacolor += (caracterlineas + "<br>");
+
+      espaciosexternos--;
+
+      do {
+
+
+
+         for (let index = 0; index < espaciosexternos; index++) {
             romboacolor += ("&nbsp");
          }
-   
+
          espaciosexternos--;
-         romboacolor += ("*");
-         romboacolor += "<span style= 'background-color: "+color+";'>";
+         romboacolor += (caracterlineas);
+         romboacolor += "<span style= 'color: " + color + ";'>";
          for (let id = 0; id < espaciosinternos; id++) {
-            romboacolor += ("&nbsp");
+            romboacolor += (caracterrelleno);
          }
          romboacolor += "</span>";
-         espaciosinternos+=2;
-         romboacolor += ("*<br>");
+         espaciosinternos += 2;
+         romboacolor += (caracterlineas + "<br>");
          filasmitad--;
-        }while (filasmitad>1)
+      } while (filasmitad > 1)
 
-        //Hasta aqui imprime la mitad del rombo. Ahora se hace a la inversa.
+      //Hasta aqui imprime la mitad del rombo. Ahora se hace a la inversa.
 
-        filasmitad = filas/2;
+      filasmitad = filas / 2;
 
-        espaciosexternos = 0;
-        espaciosinternos = filas-3;
+      espaciosexternos = 0;
+      espaciosinternos = filas - 3;
 
-                do{
-    
-                for (let index = 0; index < espaciosexternos; index++) {
-                    romboacolor += ("&nbsp");
-                 }
-                 espaciosexternos++;
-                 romboacolor += ("*");
+      do {
 
-                 romboacolor += "<span style= 'background-color: "+color+";'>";
-    
-                 for (let id = 0; id < espaciosinternos; id++) {
-                    romboacolor += ("&nbsp");
-                    
-                 }
-                 romboacolor += "</span>";
-                 espaciosinternos-=2;
-                 romboacolor += ("*<br>");
-                      filasmitad--;               
-                }
-                
-                
-                while (filasmitad>1)
+         for (let index = 0; index < espaciosexternos; index++) {
+            romboacolor += ("&nbsp");
+         }
+         espaciosexternos++;
+         romboacolor += (caracterlineas);
 
-                for (let index = 0; index < espaciosexternos; index++) {
-                    romboacolor += ("&nbsp");
-                 }
-                    espaciosexternos++;
-                    romboacolor += ("*<br>");
-        
-                    filasmitad++;
+         romboacolor += "<span style= 'color: " + color + ";'>";
 
-                }
+         for (let id = 0; id < espaciosinternos; id++) {
+            romboacolor += (caracterrelleno);
 
-                document.getElementById("rombocolor").innerHTML = romboacolor;
+         }
+         romboacolor += "</span>";
+         espaciosinternos -= 2;
+         romboacolor += (caracterlineas + "<br>");
+         filasmitad--;
+      }
 
 
+      while (filasmitad > 1)
+
+      for (let index = 0; index < espaciosexternos; index++) {
+         romboacolor += ("&nbsp");
+      }
+      espaciosexternos++;
+      romboacolor += (caracterlineas + "<br>");
+
+      filasmitad++;
+
+   }
+
+   document.getElementById("rombocolor").innerHTML = romboacolor;
 
 
 
 
 
-// DIBUJAMOS UN CUADRADO A COLOR
 
 
-cuadradoacolor="<h2>Cuadrado a color</h2>";
-filas = document.getElementById ("in1").value;
-
-//Primera linea del cuadrado
-            for (let index = 0; index < filas; index++) {
-                cuadradoacolor += "*";                
-            }
-            cuadradoacolor += "<br>";
-            
-//Relleno del cuadrado
-
-            for (let index = 0; index < filas -2; index++) {
-               cuadradoacolor+="*"
-               cuadradoacolor += "<span style= 'background-color: "+color+";'>";
-               for (let index = 0; index < filas -2; index++) {
-                cuadradoacolor += "&nbsp"
-              }
-              cuadradoacolor+="</span>*<br>"
-            }
-//Última linea del cuadrado
-             for (let index = 0; index < filas; index++) {
-                cuadradoacolor += "*";                
-            }
+   // DIBUJAMOS UN CUADRADO A COLOR
 
 
-            document.getElementById("cuadradocolor").innerHTML = cuadradoacolor;
+   cuadradoacolor = "<h2>Cuadrado a color</h2>";
+   filas = document.getElementById("in1").value;
+
+   //Primera linea del cuadrado
+   for (let index = 0; index < filas; index++) {
+      cuadradoacolor += caracterlineas;
+   }
+   cuadradoacolor += "<br>";
+
+   //Relleno del cuadrado
+
+   for (let index = 0; index < filas - 2; index++) {
+      cuadradoacolor += caracterlineas;
+      cuadradoacolor += "<span style= 'color: " + color + ";'>";
+      for (let index = 0; index < filas - 2; index++) {
+         cuadradoacolor += caracterrelleno;
+      }
+      cuadradoacolor += "</span>" + caracterlineas + "<br>";
+   }
+   //Última linea del cuadrado
+   for (let index = 0; index < filas; index++) {
+      cuadradoacolor += caracterlineas;
+   }
+
+
+   document.getElementById("cuadradocolor").innerHTML = cuadradoacolor;
+
+   // DIBUJAMOS UN CUADRADO ASCII
+
+   cuadradoascii = "<h2>Cuadrado Ascii</h2>";
+   filas = document.getElementById("in1").value;
+
+   //Primera linea del cuadrado
+   cuadradoascii += "&#9556";
+   for (let index = 0; index < filas - 2; index++) {
+      cuadradoascii += "&#9552";
+   }
+   cuadradoascii += "&#9559";
+   cuadradoascii += "<br>";
+
+   //Relleno del cuadrado
+
+   for (let index = 0; index < filas - 2; index++) {
+      cuadradoascii += "&#9553"
+
+      for (let index = 0; index < filas - 2; index++) {
+         cuadradoascii += "&nbsp"
+      }
+      cuadradoascii += "&#9553<br>"
+
+   }
+
+
+
+   //Última linea del cuadrado
+
+   cuadradoascii += "&#9562";
+   for (let index = 0; index < filas - 2; index++) {
+      cuadradoascii += "&#9552";
+   }
+   cuadradoascii += "&#9565";
+
+   document.getElementById("cuadradoascii").innerHTML = cuadradoascii;
 
 }
