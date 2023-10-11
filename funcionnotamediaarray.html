@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function calcularmedia(notas) {
+        if (notas.length < 1) {
+          throw "No se han introducido datos";
+        } else {
+          let suma = 0;
+          numero = 0;
+
+          notas.forEach((element) => {
+            suma += element;
+            numero++;
+          });
+
+          return suma / numero;
+        }
+      }
+      try {
+        console.log(calcularmedia([]));
+      } catch (error) {
+        console.log(error); //Imprime lo que se le lanza
+      }
+
+      try {
+        console.log(calcularmedia([6, 7, 8, 9, 5, 8]));
+      } catch (error) {
+        console.log("Los datos introducidos no son correctos"); //Indicamos que imprimir
+      }
+    </script>
+  </body>
+</html>

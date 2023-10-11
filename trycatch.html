@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Document</title>
+  </head>
+  <body>
+
+
+
+    <script>
+      try {
+        console.log(pepe);
+      } catch (error) {
+        console.log("Error en variable no definida");
+        console.error("Error en variable no definida"); //Lo imprime en rojo
+        console.log (error); //Imprime el tipo de error
+      }finally{
+        console.log("Esto se ejecuta siempre");
+      }
+
+
+      function retirar(saldo,cantidad) { 
+        if (saldo < cantidad) throw "Saldo insuficiente";
+        return saldo - cantidad;
+      }
+
+        let saldo = 30000;
+        let cantidad = 5000;
+        console.log ("El saldo es " + saldo);
+
+
+        try {
+            saldo = retirar (saldo, cantidad);
+            console.log ("El nuevo saldo es " + saldo);
+
+        } catch (error) {
+            console.log ("Error");
+        }
+
+
+
+
+
+     
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
