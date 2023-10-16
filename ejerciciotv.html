@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas y perímetros</title>
+
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+<script>
+
+let tvSamsung = {
+
+    nombre: "TV Samsung 42",
+    categoria : "Televisores",
+    unidades: 4,
+    precio: 345.95,
+}
+
+tvSamsung.importe = function (){
+
+    return `El precio total de las tv es ${this.unidades*this.precio}`;
+}
+    
+console.log (tvSamsung.importe());
+
+</script>
+</body>
+</html>

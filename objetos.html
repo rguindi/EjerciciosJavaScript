@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// let alumno = new Object ();
+// alumno.nombre = "Carlos";
+// alumno[apellidos] = 'Julian Perez';
+// alumno.edad = 19;
+
+
+
+let alumno ={
+nombre: 'Carlos',
+apellidos: "Perez Ortiz",
+edad: 19
+
+}
+
+console.log (alumno.nombre);
+console.log (alumno ['nombre']);
+let prop = 'apellidos';
+
+console.log (alumno [prop]);   //metemos una variable con la porpiedad que queremos
+console.log (alumno.talla);   
+console.log (alumno.talla?.max);   
+
+alumno.talla = {
+    max: 500,
+}
+
+console.log (alumno);
+
+for (let prop in alumno){            
+    console.log (prop + ":"+ alumno[prop]);
+}
+
+//No se puede utilizar for of
+
+// for (let valor of alumno){
+//     console.log (valor);
+// }
+
+
+
+//METODOS
+
+alumno.getinfo = function () {
+    return "El alumno " + this.nombre + " tiene " + alumno.edad + " años.";
+}
+
+console.log (alumno.getinfo());
+
+alumno.getinfo2 = () => "El alumno " + this.nombre + " tiene " + alumno.edad + " años.";  //En flecha no funciona this
+console.log (alumno.getinfo2());
+
+
+
+    </script>
+</body>
+</html>
