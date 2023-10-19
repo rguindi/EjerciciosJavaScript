@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromos</title>
+    <!-- <link rel="stylesheet" href="css/estilos.css"> -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+
+</head>
+<body>
+    <script>
+
+        
+  
+        // function esPalindroma(cadena) {
+
+         
+        //    let  mitad = Math.trunc(cadena.length/2);
+
+        //    console.log (mitad);
+
+        //    izqder = "";
+        //    derizq = Array ();
+            
+        //    for (let index = 0; index < mitad; index++) {
+          
+        //          izqder += (cadena[index]);
+                
+        //         derizq.unshift (cadena[index]);
+        
+        //    }
+
+        //    if (izqder==derizq) return true;
+        //    else return false;
+
+            
+        // }
+
+        // console.log(esPalindroma("ojo"));
+
+
+
+        //ALTERNATIVA
+
+            let cad ="asf123";
+            console.log(cad.split('').reverse('').join('')); //CONVIERTE EN ARRAY
+
+            function palin (cade){
+
+                if (cade===cade.split('').reverse('').join('')) return true;
+                else return false
+            }
+            console.log(palin("ojoojo"));
+
+    </script>
+  
+
+
+
+</body>
+</html>

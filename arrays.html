@@ -1,137 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // let a = new array ();
-        // let b = new array (2,3,4);
+      // let a = new array ();
+      // let b = new array (2,3,4);
 
-        let a = [];
-        let b = [2,3,4];
+      let a = [];
+      let b = [2, 3, 4];
 
+      let c = [2, "tres", 4, "cuatro"];
 
-        let c = [2, "tres", 4, "cuatro"];
+      console.log(c[0]);
 
-        console.log (c[0]);
+      c[7] = 600;
+      console.log(c[6]); //Indefinido
+      console.log(c[7]);
 
-        c[7] = 600;
-        console.log (c[6]);   //Indefinido
-        console.log (c[7]);
+      //String es un array
+      let y = "asfdasdf";
+      console.log(y[0]); //Devuelve a
 
+      // SPPLIT
+      let aa = [2, 4, 6];
+      console.log(aa.toString());
+      let bb = aa.join("-");
+      console.log(bb.toString());
 
-        //String es un array
-        let y = "asfdasdf";
-        console.log (y[0]); //Devuelve a
+      let cc = [2, 4, 6];
+      console.log(cc.toString());
+      let d = cc.join("");
+      console.log(d.toString());
 
+      let e = "Raul Ferrero Vicente";
+      console.log(e);
+      let arraynombre = e.split(" ");
+      console.log(arraynombre);
 
+      //ORDENAR ARRAYS
 
-        // SPPLIT
-        let aa = [2,4,6];
-        console.log (aa.toString());
-        let bb = aa.join ("-");
-        console.log (bb.toString());
+      let orden = ["fd", "asdf", "ghgjts", 8, 0, 145, "ZA"];
+      console.log(orden);
+      orden.sort();
+      console.log(orden);
 
+      let alfabe = ["Hola", "adios", "Si", "no"];
+      console.log(alfabe);
+      alfabe.sort();
+      console.log(alfabe);
+      alfabe = ["Hola", "adios", "Si", "no"];
+      let ordenado = alfabe.sort(function (e1, e2) {
+        //Ordena sin tener en cuenta myusculas y minusculas
+        if (e1.toLocaleLowerCase() < e2.toLocaleLowerCase()) return -1;
+        if (e1.toLocaleLowerCase() > e2.toLocaleLowerCase()) return 1;
+        if (e1.toLocaleLowerCase() == e2.toLocaleLowerCase()) return 0;
+      });
+      console.log(ordenado);
 
-        let cc = [2,4,6];
-        console.log (cc.toString());
-        let d = cc.join ("");
-        console.log (d.toString());
+      //mas funciones para ordenar
 
-        let e = "Raul Ferrero Vicente";
-        console.log (e);
-        let arraynombre= e.split (" ");
-        console.log (arraynombre);
+      let t = [20, 4, 97, 1, 56];
+      let j = t.sort(function (e1, e2) {
+        return e1 - e2; //Cambiar oorden resta para cambiar orden de la funcion
+      });
+      console.log(j);
 
+      //ORDENAR ARRAY DE OBJETOS
 
-        //ORDENAR ARRAYS
+      function ordenarEdad(p1, p2) {
+        return p1.edad - p2.edad;
+      }
 
-        let orden = ["fd","asdf", "ghgjts", 8,0,145, "ZA"];
-        console.log (orden);
-        orden.sort();
-        console.log (orden);
+      let persona1 = { nombre: "Raul", edad: 27 };
+      let persona2 = { nombre: "juan", edad: 67 };
+      let persona3 = { nombre: "Pedro", edad: 57 };
+      let persona4 = { nombre: "Miguel", edad: 17 };
+      let personas = [persona1, persona2, persona3, persona4];
 
-        let alfabe = ["Hola", "adios", "Si", "no"];
-        console.log (alfabe);
-        alfabe.sort();
-        console.log (alfabe);
-        alfabe = ["Hola", "adios", "Si", "no"];
-        let ordenado = alfabe.sort (function(e1,e2) {  //Ordena sin tener en cuenta myusculas y minusculas
-            if (e1.toLocaleLowerCase() < e2.toLocaleLowerCase()) return -1;
-            if (e1.toLocaleLowerCase() > e2.toLocaleLowerCase()) return 1;
-            if (e1.toLocaleLowerCase() == e2.toLocaleLowerCase()) return 0;
-        });
-        console.log (ordenado);
+      let personasordenado = personas.sort(ordenarEdad);
+      console.log(personasordenado);
 
-        //mas funciones para ordenar
+      //LO MISMO EN FUNCION FLECHA
+      personasordenado = personas.sort((p1, p2) => p1.edad - p2.edad);
+      console.log(personasordenado);
 
-        let t = [20,4, 97, 1, 56];
-        let j = t.sort (function (e1, e2) {
-            return e1-e2; //Cambiar oorden resta para cambiar orden de la funcion
-            
-            
-        });
-        console.log (j);
+      //ahora por orden alfabetico
+      personasalfabetico = personas.sort((p1, p2) => {
+        if (p1.nombre.toLocaleLowerCase() < p2.nombre.toLocaleLowerCase())
+          return -1;
+        if (p1.nombre.toLocaleLowerCase() > p2.nombre.toLocaleLowerCase())
+          return 1;
+        if (p1.nombre.toLocaleLowerCase() == p2.nombre.toLocaleLowerCase())
+          return 0;
+      });
+      console.log(personasalfabetico);
 
-
-
-
-        //ORDENAR ARRAY DE OBJETOS
-
-        function ordenarEdad(p1,p2) {
-
-            return p1.edad -p2.edad;
-            
-        }
-
-       
-
-        let persona1 = {nombre: "Raul", edad: 27};
-        let persona2 = {nombre: "juan", edad: 67};
-        let persona3 = {nombre: "Pedro", edad: 57};
-        let persona4 = {nombre: "Miguel", edad: 17};
-        let personas = [persona1, persona2, persona3, persona4];
-
-        let personasordenado = personas.sort (ordenarEdad);
-        console.log (personasordenado);
-
-         //LO MISMO EN FUNCION FLECHA
-         personasordenado = personas.sort ((p1,p2)=>p1.edad -p2.edad);
-         console.log (personasordenado);
-
-        //ahora por orden alfabetico
-        personasalfabetico = personas.sort((p1,p2)=> {
-          if (p1.nombre.toLocaleLowerCase() < p2.nombre.toLocaleLowerCase()) return -1;
-          if (p1.nombre.toLocaleLowerCase() > p2.nombre.toLocaleLowerCase()) return 1;
-          if (p1.nombre.toLocaleLowerCase() == p2.nombre.toLocaleLowerCase()) return 0;  
-        });
-        console.log (personasalfabetico);
-
-        /*EJERCICIO: Haz una función que ordene las notas de un array pasado como parámetro.
+      /*EJERCICIO: Haz una función que ordene las notas de un array pasado como parámetro.
         Si le pasamos [4,8,3,10,5] debe devolver [3,4,5,8,10]. Pruébalo en la consola */
-       
-        function ordenanotas(notas) {
-         
-           return  notas.sort ((e1, e2)=>e1-e2) ;
-     
-        }
-        console.log ("notas ordenadas");
-        console.log (ordenanotas([4,8,3,10,5]));
 
-//EJERCICIO: Dado un array con los días de la semana obtén todos los días que empiezan por ‘M’ 
+      function ordenanotas(notas) {
+        return notas.sort((e1, e2) => e1 - e2);
+      }
+      console.log("notas ordenadas");
+      console.log(ordenanotas([4, 8, 3, 10, 5]));
 
-        let diassemana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
-        
-        let diasM = diassemana.filter((dia=> dia.startsWith ('M')));
-        console.log (diasM);
+      //EJERCICIO: Dado un array con los días de la semana obtén todos los días que empiezan por ‘M’
 
+      let diassemana = [
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado",
+        "Domingo",
+      ];
+
+      let diasM = diassemana.filter((dia) => dia.startsWith("M"));
+      console.log(diasM);
+
+      let M = diassemana.some((ese) => ese.startsWith("S"));
+
+      console.log(M);
+      console.log(diassemana.every((ese) => ese[diassemana.length-1]=='s'));
+
+      //MAP EJERCICIO: Dado un array con los días de la semana devuelve otro array con los días en mayúsculas. 
+
+      let semanaMayusculas =  diassemana.map (d => d.toUpperCase());
+      
+      console.log(semanaMayusculas);
+
+
+      //CONVERTIRLO A NUMEROS
+      let notas = ['4',5,'7',0];
+
+      let notasentero = notas.map (con => parseInt (con));
+
+      console.log(notasentero);
+
+
+
+      //REDUCE METODO
+
+      let not = [4,5,7,0];
+      let suma=0;
+
+      suma = not.reduce((total,valor)=> {
+        total +=valor;
+        return total;
+      },0); //ultimo parametro valor inicial
+
+      console.log(suma);
+
+      
 
 
     </script>
-</body>
+  </body>
 </html>
