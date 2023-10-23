@@ -7,6 +7,9 @@
     <title>Document</title>
   </head>
   <body>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
     <script>
       // let a = new array ();
       // let b = new array (2,3,4);
@@ -127,39 +130,51 @@
       let M = diassemana.some((ese) => ese.startsWith("S"));
 
       console.log(M);
-      console.log(diassemana.every((ese) => ese[diassemana.length-1]=='s'));
+      console.log(diassemana.every((ese) => ese[diassemana.length - 1] == "s"));
 
-      //MAP EJERCICIO: Dado un array con los días de la semana devuelve otro array con los días en mayúsculas. 
+      //MAP EJERCICIO: Dado un array con los días de la semana devuelve otro array con los días en mayúsculas.
 
-      let semanaMayusculas =  diassemana.map (d => d.toUpperCase());
-      
+      let semanaMayusculas = diassemana.map((d) => d.toUpperCase());
+
       console.log(semanaMayusculas);
 
-
       //CONVERTIRLO A NUMEROS
-      let notas = ['4',5,'7',0];
+      let notas = ["4", 5, "7", 0];
 
-      let notasentero = notas.map (con => parseInt (con));
+      let notasentero = notas.map((con) => parseInt(con));
 
       console.log(notasentero);
 
-
-
       //REDUCE METODO
 
-      let not = [4,5,7,0];
-      let suma=0;
+      let not = [4, 5, 7, 0];
+      let suma = 0;
 
-      suma = not.reduce((total,valor)=> {
-        total +=valor;
+      suma = not.reduce((total, valor) => {
+        total += valor;
         return total;
-      },0); //ultimo parametro valor inicial
+      }, 0); //ultimo parametro valor inicial
 
       console.log(suma);
 
-      
+      //FOR-EACH
 
+      notas.forEach((nota, indice, array) =>
+        console.log("posicion; " + indice + "Elemenato: " + nota)
+      );
 
+      //ARRAY FROM
+
+      let nuevoarray = Array.from(notas, (nota, indice) =>
+        console.log(nota / 2)
+      );
+
+      let pCollection = document.getElementsByTagName('P');
+      console.log(pCollection);
+      let pArray = Array.from(pCollection);
+      console.log(pArray);
     </script>
+
+   
   </body>
 </html>
