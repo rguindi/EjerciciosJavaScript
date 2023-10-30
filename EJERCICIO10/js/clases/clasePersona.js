@@ -2,6 +2,7 @@
 export class Persona {
 
     static contadorPersonas = 100;
+    
     static max = 107;
 
     constructor (a, b, c){

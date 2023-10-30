@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones propotipo</title>
+</head>
+<body>
+
+
+<script>
+console.log("Prototipos");
+
+Number.prototype.doble = function (){
+return this+this;
+
+}
+let n1 = 34;
+console.log(n1.doble());
+
+
+String.prototype.nombrePropio= function (){
+
+    return this[0].toUpperCase() + this.toLowerCase().slice (1);
+}
+
+let n2= "rAuL";
+console.log(n2.nombrePropio());
+
+</script>
+
+    
+</body>
+</html>
