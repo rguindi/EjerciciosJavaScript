@@ -4,6 +4,9 @@ export class Orden{
 
      
     static numeroorden = 0;
+    static get MAX_PRODUCTOS(){     //DECLARAMOS CONSTANTE
+        return 5;
+    }
 
     constructor(){
        
@@ -13,7 +16,8 @@ export class Orden{
     }
 
     agregarProducto (producto){
-        if (this._arrayProductos.length>=5){
+
+        if (this._arrayProductos.length>=Orden.MAX_PRODUCTOS){
             console.log("No caben más productos en la Orden: " + this.id);
         }else
         this._arrayProductos.push(producto);

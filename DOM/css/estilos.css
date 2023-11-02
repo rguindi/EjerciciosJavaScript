@@ -1,0 +1,12 @@
+.divSquare{
+    width: 48%;
+    height: 300px;
+    margin: 4px;
+    border: 1px solid black;
+    float: left;
+}
+
+h1{
+    text-align: left;
+}
+
