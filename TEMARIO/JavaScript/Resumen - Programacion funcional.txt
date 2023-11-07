@@ -93,5 +93,26 @@ let arrayB = Array.from(arrayA);
 
 
 
+-----COPIAR O REFERENCIAR---
+//las variables por defecto se copian, los objetos y arrays se copian la referencia (puntero).
+para copiar un array usar slice o arrayfrom
+para un objeto:
+let a = {id:2, name: 'object 2'} 
+let copiaDeA = Object.assign({}, a) //ahora ambos objetos contienen lo mismo, pero son diferentes
 
-//Seguir por Referencia vs Copia del documento arrays
+-----JSON---
+JSON.parse()    //convierte cadena json en objeto
+JSON.stringify()  //Lo contrario
+
+-------------------MAP Y SET---------------------
+El objeto Map es una colección de parejas de [clave,valor]. 
+El objeto Set es como un Map, pero que no almacena los valores, almacena solo la clave. Podemos verlo como una 
+colección que no permite duplicados
+
+let ganadores = ['Márquez', 'Rossi', 'Márquez', 'Lorenzo', 'Rossi', 'Márquez', 
+'Márquez'] 
+let ganadoresNoDuplicados = new Set(ganadores)    // {'Márquez, 'Rossi', 'Lorenzo'} 
+ 
+// o si lo queremos en un array: 
+ 
+ganadoresNoDuplicados = Array.from(new Set(ganadores)) // ['Márquez, 'Rossi', 'Lorenzo']
