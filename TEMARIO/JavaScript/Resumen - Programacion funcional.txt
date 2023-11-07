@@ -1,0 +1,97 @@
+
+-------------------FILTER----------------------
+Devuelve un nuevo array con los elementos que cumplen determinada condición del array al que se aplica. 
+En la funcion que se aplica, si devuleve true lo incluye al nuevo array, false para el resto.
+
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3]
+
+let aprobados = arrayNotas.filter(function(nota) { 
+  if (nota >=  5) { 
+    return true 
+  } else { 
+    return false 
+  }  
+})       // aprobados = [5.2, 6, 9.75, 7.5] 
+
+let aprobados = arrayNotas.filter(function(nota) {return nota >= 5 })            // nota >=  5 se evalúa a 'true' si es cierto, o 'false' si no lo es 
+let aprobados = arrayNotas.filter(nota  => nota >=  5)                        //Lo mismo con flecha
+
+let diasM = diassemana.filter((dia) => dia.startsWith("M"));      //Devuelve array con dias q empiezan por M
+
+
+-------------------FIND----------------------
+Como filter pero NO devuelve un array, devuelve el primer elemento que cumpla la condición
+
+let primerAprobado = arrayNotas.find(nota  => nota >=  5)    // primerAprobado = 5.2
+
+
+let cocheBuscado = coches.find(coche  => coche.color === 'rojo')    // devolverá el objeto completo del primer elemento que cumpla la condición.
+let cocheBuscado=coches.find((coche,indice) => indice ===1);        // devolverá el objeto coches[1]
+
+
+-------------------FINDINDEX----------------------
+Como find pero, en vez de devolver el elemento, devuelve su posición
+
+
+-------------------EVERY   Y    SOME----------------------
+• every devuelve true si TODOS los elementos del array cumplen la condición y false en caso contrario.  
+• some devuelve true si ALGÚN elemento del array cumple la condición.
+
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3] 
+let todosAprobados = arrayNotas.every(nota  => nota >=  5)   // false 
+let algunAprobado = arrayNotas.some(nota  => nota >=  5)     // true
+
+
+-------------------MAP----------------------
+Permite  modificar  cada  elemento  de  un  array  y  devuelve  un  nuevo  array 
+
+Ejemplo: queremos subir un 10% cada nota: 
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3]; 
+let arrayNotasSubidas = arrayNotas.map(nota  => nota + nota * 0.1);
+
+let semanaMayusculas = diassemana.map((d) => d.toUpperCase());   //Cambia a mayusculas
+
+
+-------------------REDUCE---------------------
+Ejecuta una función tipo callback para cada elemento del array, y devuelve un único valor calculado 
+array.reduce(function(total, currentValue, currentIndex, vector), initialValue)
+• total o valorAnterior (obligatorio), contiene el valor devuelto por la función en cada llamada.  
+• currentValue (obligatorio), contiene el valor del elemento actual. 
+• currentIndex (opcional), contiene el índice del elemento actual. 
+• vector (opcional), es el array al que pertenece el elemento actual. 
+
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3]; 
+let sumaNotas = arrayNotas.reduce((total,nota)  => total +=  nota, 30)      // total = 65.35 . Ultimo parametro es el valor inicial
+sumaNotas = arrayNotas.reduce((total,nota)  => total +=  nota)                  // total = 35.35
+
+
+----------FORECAH----------
+No devuelve nada, solo lo recorre
+
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3] 
+arrayNotas.forEach((nota, indice, arrayCompleto)  => { 
+  console.log('El elemento de la posición ' + indice + ' es: ' + nota) 
+})
+
+
+-------------------INCLUDES----------------------
+Devuelve true si el array lo contiene
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3] 
+arrayNotas.includes(7.5)     // true
+
+
+
+----------ARRAY.FROM----------
+Devuelve  un  array  a  partir  de  otro . Similar a map
+
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3] 
+let arrayNotasSubidas = Array.from(arrayNotas, nota  => nota * 1.1)
+
+Puede usarse para hacer una copia de un array, igual que slice: 
+let arrayA = [5.2, 3.9, 6, 9.75, 7.5, 3]; 
+let arrayB = Array.from(arrayA);
+
+
+
+
+//Seguir por Referencia vs Copia del documento arrays
