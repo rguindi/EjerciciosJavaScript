@@ -1,0 +1,149 @@
+
+--------------OBJETOS-----------------
+
+    //Crear objeto
+let alumno = { 
+    nombre: 'Carlos', 
+    apellidos: 'Pérez Ortiz', 
+    edad: 19, 
+};
+    //Añadir propiedades
+alumno.altura= 50;
+    //borrar propiedades
+delete alumno.altura;
+
+        //imprimir
+console.log(alumno.nombre)      
+console.log(alumno['nombre'])
+console.log(alumno.ciclo?.descrip)          //? si existe
+
+        //Recorrer
+for (let prop in alumno) { 
+    console.log(prop + ': ' + alumno[prop]) 
+}
+
+    //Metodos
+alumno.getInfo = function() { 
+return 'El alumno ' + this.nombre + ' ' + this.apellidos + ' tiene ' + this.edad + ' años'          //No se puede utilizar this con sintaxis arrow function
+}
+
+Algunos métodos y propiedades genéricas de objetos de JavaScript 
+• constructor   Returns the function that created an object's prototype 
+• keys()        Returns an Array Iterator object with the keys of an object 
+• prototype     Let you to add properties and methods to JavaScript objects 
+• toString()    Converts an object to a string and returns the result. Este método se usa sobrescrito. 
+• valueOf()     Returns the primitive value of an object 
+  instanceof    Para saber si esun objeto es una instancia de una clase.   "if (objeto instanceof Alumno)"
+
+
+
+--------------CLASES-----------------
+class Alumno { 
+    constructor(nombre, apellidos, edad) { 
+        this.nombre = nombre 
+        this.apellidos = apellidos 
+        this.edad = edad 
+    } 
+    getInfo() { 
+        return 'El alumno ' + this.nombre + ' ' + this.apellidos + ' tiene ' + this.edad + ' años' 
+    } 
+} 
+ 
+let alumno1 = new Alumno('Carlos', 'Pérez Ortiz', 19) 
+console.log(alumno1.getInfo())   // imprime 'El alumno Carlos Pérez Ortíz tiene 19 años' 
+
+-----------------------HERENCIA--------------------------
+class Alumno { 
+  constructor(nombre, apellidos, edad) { 
+    this.nombre = nombre; 
+    this.apellidos = apellidos; 
+    this.edad = edad; 
+  } 
+  getInfo() { 
+    return ( 
+      "El alumno " + this.nombre + " " + this.apellidos + " tiene " +  this.edad + " años" 
+    ); 
+  } 
+} 
+ 
+class AlumnInf extends Alumno { 
+  constructor(nombre, apellidos, edad, ciclo) { 
+    super(nombre, apellidos, edad); 
+    this.ciclo = ciclo; 
+  } 
+  getGradoMedio() { 
+    if (this.ciclo.toUpperCase() === "SMR") return true; 
+    else return false; 
+  } 
+  getInfo() { 
+    return ( 
+      super.getInfo() + " y estudia el Grado " + 
+       (this.getGradoMedio() ? "Medio" : "Superior") + " de " + this.ciclo ); 
+  } 
+}
+
+
+
+//POLIMORFISMO =   Una funcion puede dar dos valores diferentes dependiendo  del parámetro pasado (un objeto heredado de otro con .getinfo() diferente para cada uno)
+                    Depende del contexto en el que se utiliza toma diferentes formas
+
+
+-----------------------METODOS ESTATICOS--------------------------
+Se  llaman directamente utilizando el nombre de la clase
+
+class Tripple {
+    static triple (n){
+        n=n||1;      //Si no se pasa valor es 1
+        return n*3;
+    }
+}
+
+class BiggerTriple extends Tripple{
+
+        static triple(n){
+            return super.triple(n)* 3;
+        }
+}
+console.log(Tripple.triple(3));         //3
+console.log(BiggerTriple.triple(3));        //81
+
+-----------------------ATRIBUTOS ESTATICOS--------------------------
+Atributo q pertenece a la clase y no al objeto
+class Alumno { 
+    static contadorObjetosAlumno = 0; 
+....}
+// ATRIBUTO ESTATICO CONSTANTE
+No utilizamos const, hacemos funcion get q devuelve el valor (no hacemos set)
+static get MAX_OBJ(){ 
+        return 5; 
+    }
+
+    //COMPARAR, ORDENAR
+
+    misAlumnos.sort((alum1, alum2) =>  (alum1.apellidos+alum1.nombre).localeCompare(alum2.apellidos+alum2.nombre) )      //Utilizamos localeCompare por si acentos o caracteres extraños
+
+
+    -----------------------GETTER SETTER--------------------------
+    set nombre(nombre){ 
+this._nombre = nombre.toUpperCase(); // 
+  }
+
+
+   ----------------------- FUNCIONES PROTOTIPO--------------------------
+Se puede aplicar a clases que creemos o Number, String..
+
+Number.prototype.doble = function (){
+return this+this;
+}
+
+let n1 = 34;
+console.log(n1.doble());
+
+//Ejemplo para Capitalizar una palabra:
+String.prototype.nombrePropio= function (){
+    return this[0].toUpperCase() + this.toLowerCase().slice (1);
+}
+
+let n2= "rAuL";
+console.log(n2.nombrePropio());
+

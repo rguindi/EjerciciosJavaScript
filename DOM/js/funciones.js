@@ -39,10 +39,10 @@ console.log(primero.attributes);
 
 
 
-// REVISAR con los archivos que ha mandado
-// console.log(primero.attributes[0].value);
-// if (primero.hasAttributeb('style', segundo.attributes[0].value)){
+if (primero.hasAttribute('style')){
+    primero.setAttribute('style', segundo.attributes[0].value);
+}
+console.log(segundo.attributes);
 
-// }
 
 
