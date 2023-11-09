@@ -3,7 +3,14 @@ function sumar() {
     const operandoB = document.getElementById('operandoB');
     const resultado = document.getElementById('resultado');
 
-    resultado.innerText = parseFloat (operandoA.value) + parseFloat(operandoB.value);
+    let resultados = document.createElement ('div'); 
+    resultados.setAttribute('class', 'form-control');
+    resultado.appendChild (resultados);
+
+    if ((operandoA.value == "")|| (operandoB.value =="")){
+        resultados.innerText = 'La operación no incluye números';
+    }else
+    resultados.innerText = parseFloat (operandoA.value) + parseFloat(operandoB.value);
     
 
 
