@@ -1,16 +1,19 @@
-let contador =1;
-function cambiarFondo(){
+let td = document.getElementsByTagName("td");
+let contador = 1;
+
+function cambiarFondo() {
+  if (this.classList.contains("rojo")) {
+    this.classList.remove("rojo");
+  } else {
+    this.classList.add("rojo");
+  }
 
 
-    this.setAttribute('class', 'rojo');
-  
+
 }
 
-let td = document.getElementsByTagName ('td');
-
 for (let index = 0; index < td.length; index++) {
-      td[index].addEventListener('dblclick', cambiarFondo)
-    }
-    
-console.log(td);
+  td[index].addEventListener("dblclick", cambiarFondo);
+}
 
+console.log(td);
