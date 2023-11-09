@@ -1,5 +1,9 @@
+let contador =1;
 function cambiarFondo(){
+
+
     this.setAttribute('class', 'rojo');
+  
 }
 
 let td = document.getElementsByTagName ('td');

@@ -22,8 +22,8 @@ elemento.childrem [1]  //numero de hijo
 
 
 ----------PROPIEDADES DEL NODO--------------
-elemento.innerHTML:         //contenido entre etiquetas, incluyendo otros elementos
-elemento.textContent        //Lo mismo pero ignorando otros elementos
+elemento.innerHTML:         //contenico CON ETIQUETAS
+elemento.textContent        //contenico SIN ETIQUETAS
 
 elemento.innerText:         //igual que textContent 
 elemento.value:             //devuelve la propiedad ‘value’ de un <input> 
@@ -36,10 +36,11 @@ elemento.offsetLeft / elemento.offsetTop:  devuelve  los  píxels  que  hemos  d
 
 ----------MANIPULAR DOM--------
 
-1. Elementos y contenido
-document.createElement('etiqueta'):     //crea un nuevo elemento    let nuevoLi = document.createElement('li');
-document.createTextNode('texto'):       //crea un nuevo nodo de texto que luego habra q añadir a un elemento   let textoLi = document.createTextNode('Nuevo elemento de lista');
+1. ELEMENTOS y CONTENIDO
+document.createElement('etiqueta'):     //crea un nuevo elemento 
+document.createTextNode('texto'):       //crea un nuevo nodo de texto 
 elemento.appendChild(nuevoNodo):        // añade el texto creado al elemento LI creado. O un nuevo elemento, segun lo q se pase por parametro. Será el ultimo en orden
+
 elemento.insertBefore(nuevoNodo, nodo): //añade 'nuevoNodo' como hijo antes de 'nodo' 
 elemento.removeChild(nodo)              //Elimina el nodo
 elemento.replaceChild(nuevoNodo, viejoNodo)
@@ -52,7 +53,7 @@ elemento.after(nuevoNodo): añade el nuevoNodo pasado después del nodo elemento
 elemento.replaceWith(nuevoNodo): reemplaza el nodo elemento con el nuevoNodo pasado 
 elemento.remove(): elimina el nodo elemento
 
-2. Atributos, clases, estilos
+2. ATRIBUTOS, clases, estilos
 elemento.attributes: devuelve un array con todos los atributos
 elemento.hasAttribute('nombreAtributo'): indica si elemento tiene o no
 elemento.getAttribute('nombreAtributo'): devuelve el valor   //Para muchos elementos este valor puede directamente con elemento.atributo
