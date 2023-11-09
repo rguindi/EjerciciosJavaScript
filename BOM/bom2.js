@@ -5,10 +5,7 @@ function cerrarVentana() {
 
 let nuevaVentana;                       
 
-function abrirVentana() {                   //REVISAR POR QUE NO SE CIERRA
-    // nuevaVentana = window.open("./index.html", "NombreVentana",   //Abre ventana url (la misma)
-    // "width = 100, height=200, left=200, top=100"  
-    // );
+function abrirVentana() {                  
     
     nuevaVentana = window.open("", "NombreVentana",
     "width = 400, height=200, left=200, top=100"  

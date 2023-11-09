@@ -1,13 +1,21 @@
 function sumar() {
-    resultado =  operandoA+operandoB;
+    const operandoA = document.getElementById('operandoA');
+    const operandoB = document.getElementById('operandoB');
+    const resultado = document.getElementById('resultado');
 
-    document.createElement('input');
-    document.createTextNode(resultado);
+    resultado.innerText = parseFloat (operandoA.value) + parseFloat(operandoB.value);
+    
+
+
     
 }
 
 const boton_suma = document.getElementById('boton_suma');
-let operandoA = document.getElementById('operandoA').textContent;
-let operandoB = document.getElementById('operandoB').textContent;
-
 boton_suma.addEventListener('click', sumar);
+
+
+
+
+
+
+
