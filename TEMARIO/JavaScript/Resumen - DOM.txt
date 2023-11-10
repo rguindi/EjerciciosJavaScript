@@ -22,11 +22,12 @@ elemento.childrem [1]  //numero de hijo
 
 
 ----------PROPIEDADES DEL NODO--------------
+
 elemento.innerHTML:         //contenico CON ETIQUETAS
 elemento.textContent        //contenico SIN ETIQUETAS
-
 elemento.innerText:         //igual que textContent 
 elemento.value:             //devuelve la propiedad ‘value’ de un <input> 
+
 elemento.focus: / elemento.blur  //pone o quita el foco
 elemento.clientHeight / elemento.clientWidth: devuelve el alto / ancho visible del elemento 
 elemento.offsetHeight / elemento.offsetWidth: devuelve el alto / ancho total del elemento 
@@ -38,8 +39,8 @@ elemento.offsetLeft / elemento.offsetTop:  devuelve  los  píxels  que  hemos  d
 
 1. ELEMENTOS y CONTENIDO
 document.createElement('etiqueta'):     //crea un nuevo elemento 
-document.createTextNode('texto'):       //crea un nuevo nodo de texto 
-elemento.appendChild(nuevoNodo):        // añade el texto creado al elemento LI creado. O un nuevo elemento, segun lo q se pase por parametro. Será el ultimo en orden
+document.createTextNode('texto'):       //TEXTO dentro del elemento
+elemento.appendChild(nuevoNodo):        // añade el texto  O  elemento, segun lo q se pase por parametro. Será el ULTIMO EN ORDEN
 
 elemento.insertBefore(nuevoNodo, nodo): //añade 'nuevoNodo' como hijo antes de 'nodo' 
 elemento.removeChild(nodo)              //Elimina el nodo
