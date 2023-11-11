@@ -8,26 +8,24 @@ DETENERLOS
 
 
 
-
 -------OBJETO WINDOW----
+       puede omitirse al llamar metodos:  el método setTimeout() es en realidad window.setTimeout().
 
 • .name: nombre de la ventana actual 
 • .statusbar: valor de la barra de estado 
 • .screenX/.screenY: distancia de la ventana a la esquina izquierda/superior de la pantalla 
 • .outerWidth/.outerHeight: ancho/alto total de la ventana, incluyendo la toolbar y la scrollbar 
 • .innerWidth/.innerHeight: ancho/alto útil del documento, sin la toolbar y la scrollbar 
-• .open(url, nombre, opciones): abre una nueva ventana. Devuelve el nuevo objeto ventana.  
-Las principales opciones de .open() (lista de ítems separados por comas sin espacios) son: 
-o .toolbar: si tendrá barra de herramientas 
-o .location: si tendrá barra de dirección 
-o .directories: si tendrá botones Adelante/Atrás 
-o .status: si tendrá barra de estado 
-o .menubar: si tendrá barra de menú 
-o .scrollbar: si tendrá barras de desplazamiento 
-o .resizable: si se puede cambiar su tamaño 
-o .width=px/.height=px: ancho/alto 
-o .left=px/.top=px: posición izq/sup de la ventana 
-Más información en https://www.w3schools.com/jsref/met_win_open.asp 
+• .open(url, nombre, opciones): abre una nueva ventana. Devuelve el nuevo objeto ventana. Las principales opciones de .open() (lista de ítems separados por comas sin espacios) son: 
+            o .toolbar: si tendrá barra de herramientas 
+            o .location: si tendrá barra de dirección 
+            o .directories: si tendrá botones Adelante/Atrás 
+            o .status: si tendrá barra de estado 
+            o .menubar: si tendrá barra de menú 
+            o .scrollbar: si tendrá barras de desplazamiento 
+            o .resizable: si se puede cambiar su tamaño 
+            o .width=px/.height=px: ancho/alto 
+            o .left=px/.top=px: posición izq/sup de la ventana 
 • .opener: referencia a la ventana desde la que se abrió esta ventana (para ventanas abiertas con open) 
 • .close(): la cierra (pide confirmación, a menos que la hayamos abierto con open) 
 • .moveTo(x,y): la mueve a las coord indicadas 
@@ -38,7 +36,35 @@ Más información en https://www.w3schools.com/jsref/met_win_open.asp
 • Otros métodos: .back(), .forward(), .home(), .stop(), .focus(), .blur(), .find(), .print(), ... 
 
 
-DIALOGOS
+------------DIALOGOS-----------
 window.alert(mensaje): muestra un diálogo con el mensaje indicado y un botón de ‘Aceptar’ 
 window.confirm(mensaje): muestra un diálogo con el mensaje indicado y botones de ‘Aceptar’ y ‘Cancelar’. Devuelve true false
 window.prompt(mensaje [, valor predeterminado]): muestra diálogo mensaje, (vacío o con el valor predeterminado)‘Aceptar’(devuelve lo escrito) ‘Cancelar’ (devuelve null).
+
+------------LOCATION----------
+    informacion sobre la url
+• .href: devuelve la URL actual completa 
+• .protocol, .host, .port: devuelve el protocolo, host y puerto respectivamente de la URL actual 
+• .pathname: devuelve la ruta al recurso actual 
+• .reload(): recarga la página actual 
+• .assign(url): carga la página pasada como parámetro 
+• .replace(url): ídem pero sin guardar la actual en el historial
+
+
+------------HISTORY----------
+    acceder al historial de páginas visitadas y navegar por él: 
+• .length: muestra el número de páginas almacenadas en el historial 
+• .back(): vuelve a la página anterior 
+• .forward(): va a la siguiente página 
+• .go(num):  se  mueve num páginas hacia adelante en  el historial  (si num es positivo),  o hacia  atrás (si num es negativo).
+
+
+----------Otros objetos --------
+
+• document: el objeto document que hemos visto en el DOM 
+• navigator: nos informa sobre el navegador y el sistema en que se ejecuta 
+        o .userAgent: muestra información sobre el navegador que usamos 
+        o .plataform: muestra información sobre la plataforma sobre la que se ejecuta 
+• screen: nos da información sobre la pantalla 
+        o .width/.height: ancho/alto total de la pantalla (resolución) 
+        o .availWidth/.availHeight: igual pero excluyendo la barra del S.O. 

@@ -28,3 +28,7 @@ NOTA: el orden de secuencia de los eventos es: keyDown -> keyPress -> keyUp
 • input: al cambiar el valor de un <imput> o <textarea>, Se produce cada vez que escribimos una letra en estos elementos. 
 • select: al cambiar el valor de un <select> o al seleccionar texto de un <imput> o <textarea>. 
 • submit / reset: al enviar/recargar un formulario.
+
+
+
+        //FALTA PARTE DE RESUMEN DE EVENTOS. NO VISTO AUN
