@@ -1,0 +1,30 @@
+document.getElementById('boton1').addEventListener('click', pulsado);
+
+--------EVENTOS DE PAGINA------
+Se producen en el documento HTML, normalmente en el BODY: 
+
+• load: cuando termina de cargarse la página
+• unload: al destruirse el documento (ej. cerrar) 
+• beforeUnload: antes de destruirse (podríamos mostrar un mensaje de confirmación) 
+• resize: si cambia el tamaño del documento (porque se redimensiona la ventana) 
+
+--------EVENTOS DE RATON------
+• click / dblclick: cuando se hace click/doble click sobre un elemento 
+• mousedown / mouseup: al pulsar/soltar cualquier botón del ratón 
+• mouseenter / mouseleave:  cuando  el  puntero  del  ratón  entra/sale  (tb.  podemos  usar mouseover/mouseout) 
+• mousemove: se produce continuamente mientras el puntero se mueva dentro del elemento
+
+
+--------EVENTOS DE TECLADO------ 
+• keydown: se produce al presionar una tecla y se repite continuamente si la tecla se mantiene pulsada 
+• keyup: cuando se deja de presionar la tecla 
+• keypress: acción de pulsar y soltar (sólo se produce en las teclas alfanuméricas) 
+
+NOTA: el orden de secuencia de los eventos es: keyDown -> keyPress -> keyUp 
+
+--------EVENTOS DE FORMULARIO------
+• focus / blur: al obtener/perder el foco el elemento. 
+• change: al perder el foco un <input> o <textarea> si ha cambiado su contenido, o al cambiar de valor un <select> o un <checkbox>. 
+• input: al cambiar el valor de un <imput> o <textarea>, Se produce cada vez que escribimos una letra en estos elementos. 
+• select: al cambiar el valor de un <select> o al seleccionar texto de un <imput> o <textarea>. 
+• submit / reset: al enviar/recargar un formulario.

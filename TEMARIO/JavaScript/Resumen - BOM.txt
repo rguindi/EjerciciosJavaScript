@@ -1,0 +1,44 @@
+-------TIMERS----
+- setTimeout(función, milisegundos): ejecuta la función especificada una sola vez       //const idTimeout = setTimeout (muestraMensaje, 2000); 
+- setInterval(función,  milisegundos):  ejecuta  la  función  especificada  cada  vez 
+
+DETENERLOS
+• clearTiemout(variabledeltimeout) 
+• clearInterval(variabledelintervalo)
+
+
+
+
+-------OBJETO WINDOW----
+
+• .name: nombre de la ventana actual 
+• .statusbar: valor de la barra de estado 
+• .screenX/.screenY: distancia de la ventana a la esquina izquierda/superior de la pantalla 
+• .outerWidth/.outerHeight: ancho/alto total de la ventana, incluyendo la toolbar y la scrollbar 
+• .innerWidth/.innerHeight: ancho/alto útil del documento, sin la toolbar y la scrollbar 
+• .open(url, nombre, opciones): abre una nueva ventana. Devuelve el nuevo objeto ventana.  
+Las principales opciones de .open() (lista de ítems separados por comas sin espacios) son: 
+o .toolbar: si tendrá barra de herramientas 
+o .location: si tendrá barra de dirección 
+o .directories: si tendrá botones Adelante/Atrás 
+o .status: si tendrá barra de estado 
+o .menubar: si tendrá barra de menú 
+o .scrollbar: si tendrá barras de desplazamiento 
+o .resizable: si se puede cambiar su tamaño 
+o .width=px/.height=px: ancho/alto 
+o .left=px/.top=px: posición izq/sup de la ventana 
+Más información en https://www.w3schools.com/jsref/met_win_open.asp 
+• .opener: referencia a la ventana desde la que se abrió esta ventana (para ventanas abiertas con open) 
+• .close(): la cierra (pide confirmación, a menos que la hayamos abierto con open) 
+• .moveTo(x,y): la mueve a las coord indicadas 
+• .moveBy(x,y): la desplaza los px indicados 
+• .resizeTo(x,y): especifica el ancho y alto indicados 
+• .resizeBy(x,y): añade esos pixeles de ancho/alto 
+• .pageXoffset / pageYoffset: scroll actual de la ventana horizontal / vertical 
+• Otros métodos: .back(), .forward(), .home(), .stop(), .focus(), .blur(), .find(), .print(), ... 
+
+
+DIALOGOS
+window.alert(mensaje): muestra un diálogo con el mensaje indicado y un botón de ‘Aceptar’ 
+window.confirm(mensaje): muestra un diálogo con el mensaje indicado y botones de ‘Aceptar’ y ‘Cancelar’. Devuelve true false
+window.prompt(mensaje [, valor predeterminado]): muestra diálogo mensaje, (vacío o con el valor predeterminado)‘Aceptar’(devuelve lo escrito) ‘Cancelar’ (devuelve null).
