@@ -13,13 +13,12 @@ export class Bola {
         this.colorBola = colorBola,
         this.linearGradient = linearGradient
         
-        Bola.arrayBolas.push(this) ;
+        Bola.arrayBolas.push(this.Bola) ;
     } 
     
 
 
     visualizar(){
-        console.log('log por cacda bola');
    
         const div = document.createElement ('div');
         div.setAttribute ('id', 'idBola' + this.id);   

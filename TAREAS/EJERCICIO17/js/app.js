@@ -1,14 +1,9 @@
 import { misFunciones } from "./libreria/misfunciones.js"; 
 import { Bola } from "./clases/clase_bola.js";
 
-let booola = document.createElement('input');
-booola.setAttribute ('type', 'button');
-booola.style.position = 'absolute';
-booola.style.top = '599px';
-booola.style.left = '384px';
-booola.setAttribute ('value', 'Booola');
+misFunciones.crearBotonCentrado();
 
-document.body.appendChild (booola);
+generarBola();
 
 
 
