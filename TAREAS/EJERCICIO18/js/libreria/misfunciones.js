@@ -1,14 +1,8 @@
+import { Bola } from "../clases/clase_bola.js";
 function formatearA3cifras(num){
     return num.toLocaleString(undefined,
         { minimumIntegerDigits: 3, useGrouping: false}); //dejo useGrouping para recordar la propiedad);
 }
-
-
-
-const formatoMoneda = new Intl.NumberFormat('es-ES', {     style: 'currency',     currency: 'EUR', 
-// Puedes cambiar la moneda según tus necesidades    minimumFractionDigits: 2,     maximumFractionDigits: 2,
-     useGrouping: true,   });
-//return formatoMoneda.format(valor);
 
 function crearBotonCentrado(){
     const boton =document.createElement('input');
@@ -34,9 +28,29 @@ function pasarAHexadecimal(num){
     return resultado;
 }
 
+
+
+function escucharTeclas(evento) {
+    console.log('Tecla: '+evento.key);
+    switch (evento.key) {
+        case 'Delete':
+            Bola.borrarUltimaBola();
+            break;
+        case 'p':
+            Bola.iniciarMovimiento();
+            break;
+    
+        default:
+            break;
+    }
+    
+}
+
 export const misFunciones ={
     formatearA3cifras,
     crearBotonCentrado,
     pasarAHexadecimal,
-    generarRandomInt
+    generarRandomInt,
+    escucharTeclas,
+  
 }

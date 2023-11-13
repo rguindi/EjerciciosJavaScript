@@ -1,4 +1,5 @@
 document.getElementById('boton1').addEventListener('click', pulsado);
+document.getElementById('boton1').removeEventListener('click', pulsado);
 
 --------EVENTOS DE PAGINA------
 Se producen en el documento HTML, normalmente en el BODY: 

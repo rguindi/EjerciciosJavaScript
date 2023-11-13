@@ -65,5 +65,29 @@ export class Bola {
        bolaElemento.style.backgroundColor= `${this.colorBola}`;
         document.body.appendChild(bolaElemento);
     }
+    static borrarUltimaBola() {
+
+       if(document.body.lastChild.tagName != 'INPUT')
+      document.body.removeChild (document.body.lastChild);
+
+        Bola.arrayBolas.pop();
+     }
+
+     static iniciarMovimiento() {
+        
+        Bola.arrayBolas.forEach(element => {
+            const nuevo = element.cloneNode(true);
+
+            nuevo.posX += 10;
+            nuevo.posY += 5;
+    
+            // Visualizar el nuevo clon
+            nuevo.visualizar();
+    
+            // Eliminar el elemento original después de clonar y visualizar el nuevo
+            element.remove();
+        });   
+    
+      }
 
 }

@@ -1,9 +1,9 @@
 import { Bola } from "./clases/clase_bola.js";
 import { misFunciones } from "./libreria/misfunciones.js";
 //constructor(radio, posX, posY, colorBola, linearGradient)
-new Bola(85,1,1,'red', 'linear-gradient(to bottom, #2196f3, #009688)');
-new Bola(55,200,600,'red', 'linear-gradient(to left, #7196f3, #ff9688)');
-new Bola(60, 250,250,"green");
+// new Bola(85,1,1,'red', 'linear-gradient(to bottom, #2196f3, #009688)');
+// new Bola(55,200,600,'red', 'linear-gradient(to left, #7196f3, #ff9688)');
+// new Bola(60, 250,250,"green");
 //console.log(Bola.arrayBolas);
 //Bola.arrayBolas.forEach(bola=>bola.visualizar());
 
@@ -27,5 +27,8 @@ function nuevaBola(){
     let nuevaBola=new Bola(radio, posX, posY,'cyan',linearGradient);
     nuevaBola.visualizar();
 }
+
 const boton= misFunciones.crearBotonCentrado();
 boton.addEventListener('click', nuevaBola);
+
+document.body.addEventListener ("keydown", misFunciones.escucharTeclas)
