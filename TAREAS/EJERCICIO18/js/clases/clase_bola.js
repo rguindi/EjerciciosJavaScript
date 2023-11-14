@@ -74,18 +74,19 @@ export class Bola {
      }
 
      static iniciarMovimiento() {
-        
-        Bola.arrayBolas.forEach(element => {
-            const nuevo = element.cloneNode(true);
 
-            nuevo.posX += 10;
-            nuevo.posY += 5;
-    
+
+      document.body.innerHTML = '';
+      misFunciones.crearBotonCentrado();
+      misFunciones.crearBotonintervalo()
+        Bola.arrayBolas.forEach(element => {
+            
+            element.posX += 10;
+            element.posY += 5;
             // Visualizar el nuevo clon
-            nuevo.visualizar();
-    
-            // Eliminar el elemento original después de clonar y visualizar el nuevo
-            element.remove();
+            element.visualizar();
+           
+        
         });   
     
       }

@@ -16,6 +16,18 @@ function crearBotonCentrado(){
     return boton; //por si acaso
 }
 
+function crearBotonintervalo(){
+    const boton =document.createElement('input');
+    boton.setAttribute('type', 'button');
+    boton.setAttribute('style', 'position: absolute');
+    boton.value="Comenzar intervalo";
+    boton.style.top=`${window.innerHeight -50}px`;
+    boton.style.left=`${(window.innerWidth/2)+100}px`;
+    boton.style.zIndex=1;
+    document.body.appendChild(boton);
+    return boton; //por si acaso
+}
+
 function generarRandomInt(max){
     return Math.floor(Math.random() * max);
 }
@@ -27,7 +39,14 @@ function pasarAHexadecimal(num){
     if (resultado.length ===1) resultado="0"+resultado;
     return resultado;
 }
-
+var intervalo;
+function empezarIntervalo (){
+    intervalo = setInterval (Bola.iniciarMovimiento, 50);
+    return intervalo;
+}
+function detenerIntervalo (){
+    clearInterval (intervalo);
+}
 
 
 function escucharTeclas(evento) {
@@ -39,6 +58,10 @@ function escucharTeclas(evento) {
         case 'p':
             Bola.iniciarMovimiento();
             break;
+        
+        case 'l':
+                detenerIntervalo(false);
+                break;
     
         default:
             break;
@@ -52,5 +75,7 @@ export const misFunciones ={
     pasarAHexadecimal,
     generarRandomInt,
     escucharTeclas,
+    crearBotonintervalo,
+    empezarIntervalo,
   
 }

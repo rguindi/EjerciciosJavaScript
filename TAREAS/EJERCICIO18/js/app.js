@@ -30,5 +30,8 @@ function nuevaBola(){
 
 const boton= misFunciones.crearBotonCentrado();
 boton.addEventListener('click', nuevaBola);
+const boton2= misFunciones.crearBotonintervalo();
+boton2.addEventListener('click', misFunciones.empezarIntervalo);
 
 document.body.addEventListener ("keydown", misFunciones.escucharTeclas)
+
