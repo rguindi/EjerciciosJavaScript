@@ -66,30 +66,5 @@ export class Bola {
         document.body.appendChild(bolaElemento);
         misFunciones.reproducirPitido(this.radio*3);
     }
-    static borrarUltimaBola() {
-
-       if(document.body.lastChild.tagName != 'INPUT')
-      document.body.removeChild (document.body.lastChild);
-
-        Bola.arrayBolas.pop();
-     }
-
-     static iniciarMovimiento() {
-
-
-      document.body.innerHTML = '';
-      misFunciones.crearBotonCentrado();
-      misFunciones.crearBotonintervalo()
-        Bola.arrayBolas.forEach(element => {
-            
-            element.posX += 10;
-            element.posY += 5;
-            // Visualizar el nuevo clon
-            element.visualizar();
-           
-        
-        });   
-    
-      }
 
 }

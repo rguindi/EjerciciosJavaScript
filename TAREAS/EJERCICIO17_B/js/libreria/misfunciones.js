@@ -1,8 +1,14 @@
-import { Bola } from "../clases/clase_bola.js";
 function formatearA3cifras(num){
     return num.toLocaleString(undefined,
         { minimumIntegerDigits: 3, useGrouping: false}); //dejo useGrouping para recordar la propiedad);
 }
+
+
+
+const formatoMoneda = new Intl.NumberFormat('es-ES', {     style: 'currency',     currency: 'EUR', 
+// Puedes cambiar la moneda según tus necesidades    minimumFractionDigits: 2,     maximumFractionDigits: 2,
+     useGrouping: true,   });
+//return formatoMoneda.format(valor);
 
 function crearBotonCentrado(){
     const boton =document.createElement('input');
@@ -11,18 +17,6 @@ function crearBotonCentrado(){
     boton.value="Booola";
     boton.style.top=`${window.innerHeight -50}px`;
     boton.style.left=`${window.innerWidth/2}px`;
-    boton.style.zIndex=1;
-    document.body.appendChild(boton);
-    return boton; //por si acaso
-}
-
-function crearBotonintervalo(){
-    const boton =document.createElement('input');
-    boton.setAttribute('type', 'button');
-    boton.setAttribute('style', 'position: absolute');
-    boton.value="Comenzar intervalo";
-    boton.style.top=`${window.innerHeight -50}px`;
-    boton.style.left=`${(window.innerWidth/2)+100}px`;
     boton.style.zIndex=1;
     document.body.appendChild(boton);
     return boton; //por si acaso
@@ -39,38 +33,8 @@ function pasarAHexadecimal(num){
     if (resultado.length ===1) resultado="0"+resultado;
     return resultado;
 }
-var intervalo;
-function empezarIntervalo (){
-    intervalo = setInterval (Bola.iniciarMovimiento, 50);
-    return intervalo;
-}
-function detenerIntervalo (){
-    clearInterval (intervalo);
-}
-
-
-function escucharTeclas(evento) {
-    console.log('Tecla: '+evento.key);
-    switch (evento.key) {
-        case 'Delete':
-            Bola.borrarUltimaBola();
-            break;
-        case 'p':
-            Bola.iniciarMovimiento();
-            break;
-        
-        case 'l':
-                detenerIntervalo(false);
-                break;
-    
-        default:
-            break;
-    }
-    
-}
-
-  //FUNCION EXTRAIDA DE INTERNET
-  function reproducirPitido(duracionMs) {    
+        //FUNCION EXTRAIDA DE INTERNET
+function reproducirPitido(duracionMs) {    
     // Verificar si el navegador es compatible con la API de AudioContext
     if ('AudioContext' in window || 'webkitAudioContext' in window) {
         // Crear un nuevo contexto de audio
@@ -93,16 +57,10 @@ function escucharTeclas(evento) {
     }
 }
 
-
-
 export const misFunciones ={
     formatearA3cifras,
     crearBotonCentrado,
     pasarAHexadecimal,
     generarRandomInt,
-    escucharTeclas,
-    crearBotonintervalo,
-    empezarIntervalo,
     reproducirPitido
-  
 }
