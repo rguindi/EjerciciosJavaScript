@@ -58,8 +58,8 @@ export class Bola {
         bolaElemento.style.top=`${this.innerHeight/2 - parseInt(bolaElemento.style.height)/2}px`;
         bolaElemento.style.left=`${this.innerWidth/2 - parseInt(bolaElemento.style.width)/2}px`;
         */
-       bolaElemento.style.top=`${parseInt(this.posX)}px`;
-       bolaElemento.style.left=`${parseInt(this.posY)}px`;
+       bolaElemento.style.top=`${parseInt(this.posY)}px`;
+       bolaElemento.style.left=`${parseInt(this.posX)}px`;
        //bolaElemento.style.background= 'linear-gradient(to bottom, #2196f3, #009688)';
        bolaElemento.style.background=this.linearGradient;
        bolaElemento.style.backgroundColor= `${this.colorBola}`;
@@ -90,6 +90,19 @@ export class Bola {
         
         });   
     
+      }
+            //Funciones de santi
+      eliminarultim(){
+        if(Bola.arrayBolas.length>0){
+        const ultimabola=Bola.arrayBolas.pop();
+        ultimabola.eleminar();
+        }
+      }
+
+      eliminar (){
+        const bola = document.getElementById(this.id);
+        bola.parentElement.removeChild(bola);
+        bola.remove(); //Se desaconseja
       }
 
 }

@@ -55,9 +55,12 @@ function escucharTeclas(evento) {
         case 'Delete':
             Bola.borrarUltimaBola();
             break;
-        case 'p':
-            Bola.iniciarMovimiento();
+        case 'Home':
+            misFunciones.empezarIntervalo();
             break;
+        case 'p':
+                Bola.iniciarMovimiento();
+                break;
         
         case 'l':
                 detenerIntervalo(false);
@@ -92,6 +95,7 @@ function escucharTeclas(evento) {
         console.error('El navegador no es compatible con la API de AudioContext.');
     }
 }
+
 
 
 
