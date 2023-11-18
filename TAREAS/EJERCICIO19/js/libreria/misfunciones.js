@@ -90,7 +90,7 @@ function pararMovimiento(){
 }
 
 function iniciarMovimiento(){
-    intervalo=setInterval(desplazar2, 50);
+    intervalo=setInterval(desplazar2, 20);
 }
 
 function eliminarUltimo(){

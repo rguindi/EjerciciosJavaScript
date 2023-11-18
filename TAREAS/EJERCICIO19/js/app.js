@@ -20,8 +20,8 @@ function nuevaPelota(){
     let colorFinal=`#${lgFinalR.toString(16)}${lgFinalG.toString(16)}${lgFinalB.toString(16)}`;
     let linearGradient=`linear-gradient(${lgAngulo}deg,${colorInicial},${colorFinal})`;
 
-    let velocidadY = misFunciones.generarNumeroAleatorioPosNeg (10, 75);
-    let velocidadX = misFunciones.generarNumeroAleatorioPosNeg (10, 75);
+    let velocidadY = misFunciones.generarNumeroAleatorioPosNeg (1, 30);
+    let velocidadX = misFunciones.generarNumeroAleatorioPosNeg (1, 30);
 
     let nuevaPelota=new Pelota(radio, posX, posY,'cyan',linearGradient, velocidadX, velocidadY);
     misFunciones.arrayBolas.push(nuevaPelota);
