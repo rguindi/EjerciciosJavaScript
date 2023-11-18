@@ -1,5 +1,6 @@
 import { Bola } from "../clases/clase_bola.js";
 let intervalo;
+let arrayBolas=[];
 function formatearA3cifras(num){
     return num.toLocaleString(undefined,
         { minimumIntegerDigits: 3, useGrouping: false}); //dejo useGrouping para recordar la propiedad);
@@ -8,6 +9,13 @@ function formatearA3cifras(num){
 function generarRandomInt(max){
     return Math.floor(Math.random() * max);
 }
+
+function generarNumeroAleatorioPosNeg(minimo, maximo) {    //Este random genera nu numero aleatorio entre 2 valores, q sera aleatoriamente positivo o negativo
+    const rango = maximo - minimo;
+    const numeroAleatorio = Math.random() * rango + minimo;
+    return Math.random() < 0.5 ? numeroAleatorio : -numeroAleatorio;
+  }
+
 
 function crearBotonCentrado(){
     const boton=document.createElement('input');
@@ -28,29 +36,54 @@ function pasarAHexadecimal(num){
     if (resultado.length ===0) resultado="00";
     return resultado;
 }
-/*
-function desplazarBolas(){  // no usamos esta función
-    let arrayEliminados=Bola.arrayBolas.splice(0, Bola.arrayBolas.length);
-    Bola.arrayBolas.forEach((bola, indice, array)=>{
-        //bola.desplazar(); comn método en clase Bola, no lo usamos
-        bola.eliminar();
-        arrayEliminados.forEach((bola)=>{
-            let nuevaBola= new Bola(bola.radio, bola.posX+10, bola.PosY+5, 
-                    bola.colorBola, bola.linearGradient);
-            nuevaBola.visualizar();
-});
-*/
+
 function desplazar2(){
-    Bola.arrayBolas.forEach((bola)=>{
+    arrayBolas.forEach((bola)=>{
         console.log(bola);
         const divBola=document.getElementById(bola.id);
-        bola.posX+=10;
-        bola.posY+=5;
+
+    bola = comprobarParedes(bola);
+    bola = comprobarChoque(bola);
+
+        //Lo cambia en el array
+        bola.posY+= bola.vy;
+        bola.posX+=bola.vx;         
+       //Lo cambia en el estilo
         divBola.style.left=`${bola.posX}px`;
         divBola.style.top = `${bola.posY}px`;
     });
 }
 
+function comprobarParedes(bola) {
+
+    if(bola.posY <= 0) bola.vy = -bola.vy;
+    if(bola.posY >= window.innerHeight- (bola.radio*2)) bola.vy= -bola.vy;
+    if(bola.posX <= 0) bola.vx =-bola.vx;
+    if(bola.posX >= window.innerWidth- (bola.radio*2)) bola.vx= -bola.vx;
+    return bola;  
+}
+
+function comprobarChoque (bola){
+    arrayBolas.forEach(element => {
+
+       let  Ymayor = element.posY + element.radio;
+       let  Ymenor = element.posY - element.radio;
+       let  Xmayor = element.posX + element.radio;
+       let  Xmenor = element.posX - element.radio;
+        
+        if ((element.id != bola.id) && (bola.posY <= Ymayor) && (bola.posY >= Ymenor) && (bola.posX <= Xmayor) && (bola.posX >= Xmenor) ) {
+            bola.vy = -bola.vy;
+            bola.vx =-bola.vx;
+            element.vx = -element.vx;
+            element.vy = -element.vy;
+
+        }
+
+
+    });
+
+    return bola;
+}
 
 function pararMovimiento(){
     clearInterval(intervalo);
@@ -61,8 +94,8 @@ function iniciarMovimiento(){
 }
 
 function eliminarUltimo(){
-    if (Bola.arrayBolas.length >0){
-        const ultimaBola=Bola.arrayBolas.pop();
+    if (arrayBolas.length >0){
+        const ultimaBola=arrayBolas.pop();
         // console.log(ultimaBola);
         ultimaBola.eliminar();
     }
@@ -88,5 +121,7 @@ export const misFunciones = {
     generarRandomInt,
     pasarAHexadecimal,
     crearBotonCentrado,
-    escucharTeclas
+    escucharTeclas,
+    generarNumeroAleatorioPosNeg,
+    arrayBolas
 }

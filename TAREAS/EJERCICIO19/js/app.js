@@ -1,8 +1,6 @@
 import { misFunciones } from "./libreria/misfunciones.js";
 import { Pelota } from "./clases/clase_pelota.js";
 
-let arrayBolas=[];
-
 function nuevaPelota(){
     console.log("nueve");
     let radio=misFunciones.generarRandomInt(79)+5;
@@ -22,11 +20,11 @@ function nuevaPelota(){
     let colorFinal=`#${lgFinalR.toString(16)}${lgFinalG.toString(16)}${lgFinalB.toString(16)}`;
     let linearGradient=`linear-gradient(${lgAngulo}deg,${colorInicial},${colorFinal})`;
 
-    let velocidadY = misFunciones.generarRandomInt (90)+1;
-    let velocidadX = misFunciones.generarRandomInt (90)+1;
+    let velocidadY = misFunciones.generarNumeroAleatorioPosNeg (10, 75);
+    let velocidadX = misFunciones.generarNumeroAleatorioPosNeg (10, 75);
 
     let nuevaPelota=new Pelota(radio, posX, posY,'cyan',linearGradient, velocidadX, velocidadY);
-    arrayBolas.push(nuevaPelota);
+    misFunciones.arrayBolas.push(nuevaPelota);
 
     document.getElementById("audio2_bola_nueva").play();
     nuevaPelota.visualizar();
