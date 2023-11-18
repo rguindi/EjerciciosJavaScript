@@ -13,7 +13,7 @@ function crearBotonCentrado(){
     const boton=document.createElement('input');
     boton.setAttribute('type', 'button');
     boton.setAttribute('style', `position: absolute`);
-    boton.value='Booola';
+    boton.value='Pelopelopta';
     boton.style.top=`${window.innerHeight - 50}px`
     boton.style.left=`${window.innerWidth/2}px`
     document.body.appendChild(boton);

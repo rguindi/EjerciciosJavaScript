@@ -1,9 +1,9 @@
-
 import { misFunciones } from "./libreria/misfunciones.js";
-import { Bola } from "./clases/clase_bola.js";
+import { Pelota } from "./clases/clase_pelota.js";
 
+let arrayBolas=[];
 
-function nuevaBola(){
+function nuevaPelota(){
     console.log("nueve");
     let radio=misFunciones.generarRandomInt(79)+5;
     let posX=misFunciones.generarRandomInt(window.innerWidth-2*radio);
@@ -21,23 +21,19 @@ function nuevaBola(){
     let lgFinalB=misFunciones.pasarAHexadecimal(misFunciones.generarRandomInt(255));
     let colorFinal=`#${lgFinalR.toString(16)}${lgFinalG.toString(16)}${lgFinalB.toString(16)}`;
     let linearGradient=`linear-gradient(${lgAngulo}deg,${colorInicial},${colorFinal})`;
-    let nuevaBola=new Bola(radio, posX, posY,'cyan',linearGradient);
+
+    let velocidadY = misFunciones.generarRandomInt (90)+1;
+    let velocidadX = misFunciones.generarRandomInt (90)+1;
+
+    let nuevaPelota=new Pelota(radio, posX, posY,'cyan',linearGradient, velocidadX, velocidadY);
+    arrayBolas.push(nuevaPelota);
+
     document.getElementById("audio2_bola_nueva").play();
-    //    Bola.arrayBolas.forEach(bola=>bola.visualizar());
-    nuevaBola.visualizar();
-}
-/*
-function iniciar(){
-    const boton=misFunciones.crearBotonCentrado();
-    boton.addEventListener("click",nuevaBola);
+    nuevaPelota.visualizar();
 }
 
-window.onload = function(){
-    iniciar();
-}
-*/
 document.addEventListener('DOMContentLoaded', function(){
     const boton=misFunciones.crearBotonCentrado();
-    boton.addEventListener("click",nuevaBola);
+    boton.addEventListener("click",nuevaPelota);
     document.body. addEventListener('keydown', misFunciones.escucharTeclas);
 })

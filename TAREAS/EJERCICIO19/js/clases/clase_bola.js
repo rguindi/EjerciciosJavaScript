@@ -1,15 +1,14 @@
 import { misFunciones } from "../libreria/misfunciones.js";
 export class Bola {
-    static arrayBolas=[];
+    static contador = 0;
     static arrayColores=[];
   constructor(radio, posX, posY, colorBola, linearGradient) {
-    this.id = `idBola${misFunciones.formatearA3cifras(Bola.arrayBolas.length)}`;
+    this.id = `idBola${misFunciones.formatearA3cifras(Bola.contador++)}`;
     this._radio = radio;
     this._posX = posX;
     this._posY = posY;
     this._colorBola = colorBola;
     this._linearGradient = linearGradient;
-    Bola.arrayBolas.push(this);
     }
     
     get radio() {
