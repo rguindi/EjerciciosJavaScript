@@ -3,7 +3,7 @@ import { DispositivoEntrada } from "./DispositivoEntrada.js";
 
 export class Raton extends DispositivoEntrada {
 
-	static contadorRatones = 0;
+	static contadorRatones = 0; 
 
   constructor(tipoEntrada, marca) {
     super(tipoEntrada, marca);
