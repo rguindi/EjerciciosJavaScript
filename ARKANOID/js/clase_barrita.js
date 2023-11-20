@@ -63,8 +63,8 @@ export class Barrita {
             barra.style.width = this.width;
             barra.style.height = this.height;
             barra.style.backgroundColor = this.color;
-            barra.style.marginLeft = this.posX + 'px';
-            barra.style.marginTop = this.posY +'px';
+            barra.style.left = this.posX + 'px';
+            barra.style.top = this.posY +'px';
             barra.style.border = "1px solid black";
            barra.style.position = 'absolute';
 

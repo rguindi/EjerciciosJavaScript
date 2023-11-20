@@ -1,5 +1,6 @@
 import { Barrita } from "./clase_barrita.js";
 import { Bola } from "./clase_bola.js";
+import { misFunciones } from "./funciones.js";
 
 document.body.style.height = "100vh";
 const main = document.createElement ('MAIN');
@@ -21,7 +22,7 @@ main.appendChild (zonadejuego);
 
 let barrita = new Barrita (90,20,'red', zonadejuego.offsetHeight/1.1, zonadejuego.offsetWidth/2,0);
 barrita.visualizar();
-let bola = new Bola (8, zonadejuego.offsetHeight/2, zonadejuego.offsetWidth/2 , 'grey',20,20);
+let bola = new Bola (8,  zonadejuego.offsetWidth/2 , zonadejuego.offsetHeight/2, 'grey',1,1);
 zonadejuego.appendChild(bola.visualizar());
 
-var intervalo = setInterval(bola.desplazar, 10);
+var intervalo = setInterval(misFunciones.desplazar, 5);

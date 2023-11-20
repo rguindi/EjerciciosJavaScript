@@ -1,113 +1,93 @@
 export class Bola {
-    static contador = 0;
-    static arrayBolas = [];
+  static contador = 0;
+  static arrayBolas = [];
 
-
-    constructor(radio, posX, posY, colorBola, vx, vy) {
-    this._id = "bola"+ Bola.contador++;
+  constructor(radio, posX, posY, colorBola, vx, vy) {
+    this._id = "bola" + Bola.contador++;
     this._radio = radio;
     this._posX = posX;
     this._posY = posY;
     this._colorBola = colorBola;
-    this._vx =vx;
-    this._vy =vy;
+    this._vx = vx;
+    this._vy = vy;
 
-    Bola.arrayBolas.push (this);
+    Bola.arrayBolas.push(this);
+  }
 
-    }
+  get id() {
+    return this._id;
+  }
+  set id(in_id) {
+    this._id = in_id;
+  }
 
-    get id() {
-        return this._id;
-    }
-    set id(in_id) {
-        this._id = in_id;
-    }
-    
-    get radio() {
-        return this._radio;
-    }
-    set radio(in_radio) {
-        this._radio = in_radio;
-    }
+  get radio() {
+    return this._radio;
+  }
+  set radio(in_radio) {
+    this._radio = in_radio;
+  }
 
-    get posX() {
-        return this._posX;
-    }
-    set posX(in_posX) {
-        this._posX = in_posX;
-    }
+  get posX() {
+    return this._posX;
+  }
+  set posX(in_posX) {
+    this._posX = in_posX;
+  }
 
-    get posY() {
-        return this._posY;
-    }
-    set posY(in_posY) {
-        this._posY = in_posY;
-    }
+  get posY() {
+    return this._posY;
+  }
+  set posY(in_posY) {
+    this._posY = in_posY;
+  }
 
-    get colorBola() {
-        return this._colorBola;
-    }
-    set colorBola(in_colorBola) {
-        this._colorBola = in_colorBola;
-    }
-    get vy() {
-        return this._vy;
-    }
-    set vy(in_vy) {
-        this._vy = in_vy;
-    }
-    get vx() {
-        return this._vx;
-    }
-    set vx(in_vx) {
-        this._vx = in_vx;
-    }
+  get colorBola() {
+    return this._colorBola;
+  }
+  set colorBola(in_colorBola) {
+    this._colorBola = in_colorBola;
+  }
+  get vy() {
+    return this._vy;
+  }
+  set vy(in_vy) {
+    this._vy = in_vy;
+  }
+  get vx() {
+    return this._vx;
+  }
+  set vx(in_vx) {
+    this._vx = in_vx;
+  }
 
-    visualizar() {
-        const bolaElemento=document.createElement('DIV');
-        bolaElemento.setAttribute('id', this.id);
-        bolaElemento.style.width=`${parseInt(this.radio*2)}px`; // Tamaño X
-        bolaElemento.style.height=`${parseInt(this.radio*2)}px`; // tamaño Y
-        bolaElemento.style.backgroundColor= `${this.colorBola}`;
-        bolaElemento.style.borderRadius='50%';
-        bolaElemento.style.position='absolute';
-       bolaElemento.style.marginLeft=`${parseInt(this.posX)}px`;
-       bolaElemento.style.marginTop=`${parseInt(this.posY)}px`;
+  visualizar() {
+    const bolaElemento = document.createElement("DIV");
+    bolaElemento.setAttribute("id", this.id);
+    bolaElemento.style.width = `${parseInt(this.radio * 2)}px`; // Tamaño X
+    bolaElemento.style.height = `${parseInt(this.radio * 2)}px`; // tamaño Y
+    bolaElemento.style.backgroundColor = `${this.colorBola}`;
+    bolaElemento.style.borderRadius = "50%";
+    bolaElemento.style.position = "absolute";
+    bolaElemento.style.left = `${parseInt(this.posX)}px`;
+    bolaElemento.style.top = `${parseInt(this.posY)}px`;
 
-        return bolaElemento;
+    return bolaElemento;
+  }
 
-    }
+  eliminar() {
+    const bola = document.getElementById(this.id);
+    bola.parentElement.removeChild(bola);
+    //bola.remove(); // se desaconseja
+  }
 
-    eliminar(){
-        const bola= document.getElementById(this.id);
-        bola.parentElement.removeChild(bola);
-        //bola.remove(); // se desaconseja
-    }
-    desplazar(){
-        Bola.arrayBolas.forEach((bola)=>{
-            console.log(bola);
-            const divBola = document.getElementById(bola.id);
-    
-        bola = bola.comprobarParedes(bola);
-        // bola = comprobarChoque(bola);
-    
-            //Lo cambia en el array
-            bola.posY+= bola.vy;
-            bola.posX+= bola.vx;         
-           //Lo cambia en el estilo
-            divBola.style.marginLeft=`${bola.posX}px`;
-            divBola.style.marginTop = `${bola.posY}px`;
-        });
-    }
-    comprobarParedes(bola) {
-        let zona = document.getElementById = ('zonadejuego');
+  comprobarParedes(bola) {
 
-        if(bola.posY <= 0) bola.vy = -bola.vy;
-        if(bola.posY >= zona.offsetHeight- (bola.radio*2)) bola.vy= -bola.vy;
-        if(bola.posX <= 0) bola.vx =-bola.vx;
-        if(bola.posX >= zona.offsetWidth - (bola.radio*2)) bola.vx= -bola.vx;
-        return bola;  
-    }
 
-  
+    if (bola.posY <= 0) bola.vy = -bola.vy;
+    if (bola.posY >= zonadejuego.offsetHeight - bola.radio * 2) bola.vy = -bola.vy;
+    if (bola.posX <= 0) bola.vx = -bola.vx;
+    if (bola.posX >= zonadejuego.offsetWidth - bola.radio * 2) bola.vx = -bola.vx;
+    return bola;
+  }
 }
