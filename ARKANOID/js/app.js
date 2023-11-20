@@ -1,25 +1,27 @@
 import { Barrita } from "./clase_barrita.js";
 import { Bola } from "./clase_bola.js";
 
+document.body.style.height = "100vh";
 const main = document.createElement ('MAIN');
 main.style.display ='flex';
 main.style.justifyContent = ('center');
-main.style.position = 'relative';
+
 
 document.body.appendChild (main);
 
 
 const zonadejuego = document.createElement ('DIV');
 zonadejuego.setAttribute ('id', 'zonadejuego');
-zonadejuego.position = 'relative';
-zonadejuego.style.width = 600 + "px";
-zonadejuego.style.height = 600 + "px";
+zonadejuego.style.position = "relative";
+zonadejuego.style.width = 90 + "%";
+zonadejuego.style.height = 90 + "vh";
 zonadejuego.style.backgroundColor = "aliceblue";
 zonadejuego.style.border = "2px solid black";
 main.appendChild (zonadejuego);
 
-let barrita = new Barrita (90,20,'red',500,250,0);
+let barrita = new Barrita (90,20,'red', zonadejuego.offsetHeight/1.1, zonadejuego.offsetWidth/2,0);
 barrita.visualizar();
-let bola = new Bola (8, 300, 1 , 'grey');
+let bola = new Bola (8, zonadejuego.offsetHeight/2, zonadejuego.offsetWidth/2 , 'grey',20,20);
 zonadejuego.appendChild(bola.visualizar());
 
+var intervalo = setInterval(bola.desplazar, 10);

@@ -1,14 +1,26 @@
 export class Bola {
     static contador = 0;
+    static arrayBolas = [];
 
 
-    constructor(radio, posX, posY, colorBola) {
-    this.id = "bola";
+    constructor(radio, posX, posY, colorBola, vx, vy) {
+    this._id = "bola"+ Bola.contador++;
     this._radio = radio;
     this._posX = posX;
     this._posY = posY;
     this._colorBola = colorBola;
+    this._vx =vx;
+    this._vy =vy;
 
+    Bola.arrayBolas.push (this);
+
+    }
+
+    get id() {
+        return this._id;
+    }
+    set id(in_id) {
+        this._id = in_id;
     }
     
     get radio() {
@@ -38,6 +50,18 @@ export class Bola {
     set colorBola(in_colorBola) {
         this._colorBola = in_colorBola;
     }
+    get vy() {
+        return this._vy;
+    }
+    set vy(in_vy) {
+        this._vy = in_vy;
+    }
+    get vx() {
+        return this._vx;
+    }
+    set vx(in_vx) {
+        this._vx = in_vx;
+    }
 
     visualizar() {
         const bolaElemento=document.createElement('DIV');
@@ -59,5 +83,31 @@ export class Bola {
         bola.parentElement.removeChild(bola);
         //bola.remove(); // se desaconseja
     }
+    desplazar(){
+        Bola.arrayBolas.forEach((bola)=>{
+            console.log(bola);
+            const divBola = document.getElementById(bola.id);
+    
+        bola = bola.comprobarParedes(bola);
+        // bola = comprobarChoque(bola);
+    
+            //Lo cambia en el array
+            bola.posY+= bola.vy;
+            bola.posX+= bola.vx;         
+           //Lo cambia en el estilo
+            divBola.style.marginLeft=`${bola.posX}px`;
+            divBola.style.marginTop = `${bola.posY}px`;
+        });
+    }
+    comprobarParedes(bola) {
+        let zona = document.getElementById = ('zonadejuego');
+
+        if(bola.posY <= 0) bola.vy = -bola.vy;
+        if(bola.posY >= zona.offsetHeight- (bola.radio*2)) bola.vy= -bola.vy;
+        if(bola.posX <= 0) bola.vx =-bola.vx;
+        if(bola.posX >= zona.offsetWidth - (bola.radio*2)) bola.vx= -bola.vx;
+        return bola;  
+    }
+
   
 }

@@ -66,7 +66,7 @@ export class Barrita {
             barra.style.marginLeft = this.posX + 'px';
             barra.style.marginTop = this.posY +'px';
             barra.style.border = "1px solid black";
-           barra.style.position = 'relative';
+           barra.style.position = 'absolute';
 
             let zona = document.getElementById ('zonadejuego');
             zona.appendChild (barra);
