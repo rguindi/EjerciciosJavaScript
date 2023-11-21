@@ -1,14 +1,15 @@
-
+import { misFunciones } from "../funciones.js";
+// import { DispositivoEntrada } from "./DispositivoEntrada.js";
 import { Monitor } from "./monitor.js";
 import { Teclado } from "./teclado.js";
 import { Raton } from "./raton.js";
 
 export class Computadora{
 
-	static contadorComputadoras= 0;
+	static contadorComputadoras= 1;
 
-  constructor(idComputadora, nombre, monitor, teclado, raton, ) {
-    this._idcomputadora = "PC" + misFunciones(Computadora.contadorComputadoras++);
+  constructor(nombre, monitor, teclado, raton) {
+    this._idcomputadora = misFunciones.formatearA4cifras(Computadora.contadorComputadoras++);
     this._nombre = nombre;
     this._monitor = monitor;
     this._teclado = teclado;
@@ -51,7 +52,17 @@ export class Computadora{
 					}
 					
 			
-					
+toString(){
+	let info = "\n-------------------------------------------------------\n" + 
+"PC id: " + this.idcomputadora + " " + this.nombre + 
+"\n-------------------------------------------------------\n\n";
+info += this.monitor.toString();
+info += "\n"; 
+info +=  this.teclado.toString();
+info += "\n"; 
+info += this.raton.toString();
+	return info;
+}					
 					
   
 
