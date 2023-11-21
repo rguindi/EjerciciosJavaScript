@@ -37,11 +37,11 @@ function desplazar() {
 }
 
 function moverIzq(){
-  intervalo=setInterval(desplazari, 80);
+  intervalo=setInterval(desplazari, 20);
 }
 
 function moverDer(){
-  intervalo=setInterval(desplazard, 80);
+  intervalo=setInterval(desplazard, 20);
 }
 
 function desplazari(){
