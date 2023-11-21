@@ -26,3 +26,5 @@ let bola = new Bola (8,  zonadejuego.offsetWidth/2 , zonadejuego.offsetHeight/2,
 zonadejuego.appendChild(bola.visualizar());
 
 var intervalo = setInterval(misFunciones.desplazar, 5);
+document.body.addEventListener('keydown', misFunciones.escucharTeclas);
+document.body.addEventListener('keyup', misFunciones.escucharTeclas2);

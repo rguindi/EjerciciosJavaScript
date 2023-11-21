@@ -1,5 +1,6 @@
 export class Barrita {
 
+	static barritas = [];
     constructor(width, height, color, posY, posX, velocidad) {
       this._id = "barrita";
       this._posX = posX;
@@ -8,6 +9,8 @@ export class Barrita {
       this._width = width + "px";
       this._height = height + "px";
       this._velocidad = velocidad;
+
+	  Barrita.barritas.push (this);
     }
 					get id() {
 						return this._id;
@@ -60,6 +63,7 @@ export class Barrita {
 					
         visualizar(){
             let barra = document.createElement ('DIV');
+			barra.setAttribute("id", this.id);
             barra.style.width = this.width;
             barra.style.height = this.height;
             barra.style.backgroundColor = this.color;
