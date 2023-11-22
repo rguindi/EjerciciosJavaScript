@@ -85,7 +85,11 @@ export class Bola {
 
 
     if (bola.posY <= 0) bola.vy = -bola.vy;
-    if (bola.posY >= zonadejuego.offsetHeight - bola.radio * 2) bola.vy = -bola.vy;
+    if (bola.posY >= zonadejuego.offsetHeight - bola.radio * 2) {
+      bola.vy = -bola.vy;
+      window.alert ("GAME OVER!!!");
+    }
+
     if (bola.posX <= 0) bola.vx = -bola.vx;
     if (bola.posX >= zonadejuego.offsetWidth - bola.radio * 2) bola.vx = -bola.vx;
     return bola;

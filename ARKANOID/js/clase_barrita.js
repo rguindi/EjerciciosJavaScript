@@ -11,6 +11,7 @@ export class Barrita {
       this._velocidad = velocidad;
 
 	  Barrita.barritas.push (this);
+	  
     }
 					get id() {
 						return this._id;

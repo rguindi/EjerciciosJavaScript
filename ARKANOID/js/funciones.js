@@ -36,57 +36,21 @@ function desplazar() {
     return bola;
 }
 
-function moverIzq(){
-  intervalo=setInterval(desplazari, 20);
+
+let mouseX;
+function posiciónraton(event) {
+  mouseX = event.clientX;
+
+    const barra = Barrita.barritas[0];
+    barra.posX = mouseX;
+    const barraDOM = document.querySelector ("#barrita");
+    barraDOM.style.left = `${mouseX}px`;
+
+  
 }
-
-function moverDer(){
-  intervalo=setInterval(desplazard, 20);
-}
-
-function desplazari(){
-  let barra = document.querySelector ("#barrita");
-  barra.posX += -1;
-  barra.style.left = `${barra.posX}px`;
-}
-
-function desplazard(){
-  let barra = document.querySelector ("#barrita");
-  barra.posX += 1; 
-  barra.style.left = `${barra.posX}px`;
-
-}
-
-
-function escucharTeclas(evento){
-  console.log('tecla: ' + evento.key);
-  switch (evento.key){
-      case 'ArrowLeft' : 
-          moverIzq();
-          break;
-      case 'ArrowRight': 
-          moverDer();
-      break;
-     
-  }
-}
-function escucharTeclas2(evento){
-  console.log('tecla: ' + evento.key);
-  switch (evento.key){
-      case 'ArrowLeft' : 
-          clearInterval(intervalo);
-          break;
-      case 'ArrowRight': 
-          clearInterval(intervalo);
-      break;
-     
-  }
-}
-
 
   export const misFunciones = {
  desplazar,
- escucharTeclas,
- escucharTeclas2
+ posiciónraton
 
 }
