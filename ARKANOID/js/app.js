@@ -22,7 +22,7 @@ main.appendChild (zonadejuego);
 
 let barrita = new Barrita (90,20,'red', zonadejuego.offsetHeight/1.1, zonadejuego.offsetWidth/2,0);
 barrita.visualizar();
-let bola = new Bola (8,  zonadejuego.offsetWidth/2 , zonadejuego.offsetHeight/2, 'grey',-1,-1);
+let bola = new Bola (8,  zonadejuego.offsetWidth/2 , zonadejuego.offsetHeight/2, 'grey',-2,-2);
 zonadejuego.appendChild(bola.visualizar());
 
 var intervalo = setInterval(misFunciones.desplazar, 1);
