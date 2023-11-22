@@ -1,6 +1,3 @@
-// import { misFunciones } from "../funciones.js";
-// import { DispositivoEntrada } from "./DispositivoEntrada.js";
-
 
 
 export class Bola {
@@ -43,15 +40,32 @@ export class Bola {
 					set color(in_color) {
 						this._color = in_color;
 					}
-					
+	
+
+	identificar(){
+		
+		this.textContent = this.getAttribute ('id');        //Aqui this es el elemento
+
+	}
+
+	eliminar(){
+		let padre = this.parentNode;    //Forma correcta de eliminar un elemento
+		padre.removeChild(this);  
+	}
 
     visualizar(){
         let bola = document.createElement ('div');
+		bola.setAttribute ('id', this.idBola);
         bola.style.width = this.width + "px";
         bola.style.height = this.height + "px";
         bola.style.backgroundColor = this.color;
         bola.style.borderRadius = "50%";
         document.body.appendChild(bola);
+		bola.addEventListener ('click', this.identificar);
+		bola.addEventListener ('dblclick', this.eliminar);
+
+
+	
     }
 
 }

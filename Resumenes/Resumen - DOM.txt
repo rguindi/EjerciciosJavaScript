@@ -20,6 +20,20 @@ También tenemos ‘atajos’ para obtener algunos elementos comunes:
 elemento.childrem [1]  //numero de hijo
 
 
+---------RELACION ENTRE NODOS-------
+
+• elemento.parentElement: devuelve el elemento padre de elemento 
+• elemento.children:  devuelve  la  colección  con  todos  los  elementos  hijo  de elemento (sólo  elementos HTML, no comentarios ni nodos de tipo texto) 
+• elemento.childNodes: devuelve la colección con todos los hijos de elemento, incluyendo comentarios y nodos de tipo texto por lo que no suele utilizarse 
+• elemento.firstElementChild: devuelve el elemento HTML que es el primer hijo de elemento 
+• elemento.firstChild:  devuelve  el  nodo  que  es  el  primer  hijo  de elemento (incluyendo  nodos  de  tipo texto o comentarios) 
+• elemento.lastElementChild, elemento.lastChild: igual pero con el último hijo 
+• elemento.nextElementSibling: devuelve el elemento HTML que es el siguiente hermano de elemento 
+• elemento.nextSibling:  devuelve  el  nodo  que  es  el siguiente  hermano  de elemento (incluyendo  nodos de tipo texto o comentarios) 
+• elemento.previousElementSibling, elemento.previousSibling: igual pero con el hermano anterior 
+• elemento.hasChildNodes: indica si elemento tiene o no nodos hijos 
+• elemento.childElementCount: devuelve el nº de nodos hijo de elemento
+
 
 ----------PROPIEDADES DEL NODO--------------
 
