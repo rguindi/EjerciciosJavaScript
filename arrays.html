@@ -58,7 +58,7 @@
       console.log(alfabe);
       alfabe = ["Hola", "adios", "Si", "no"];
       let ordenado = alfabe.sort(function (e1, e2) {
-        //Ordena sin tener en cuenta myusculas y minusculas
+        //Ordena sin tener en cuenta mayusculas y minusculas
         if (e1.toLocaleLowerCase() < e2.toLocaleLowerCase()) return -1;
         if (e1.toLocaleLowerCase() > e2.toLocaleLowerCase()) return 1;
         if (e1.toLocaleLowerCase() == e2.toLocaleLowerCase()) return 0;

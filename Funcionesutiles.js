@@ -65,4 +65,69 @@ el salto de linea en el codigo con la barra invertida."
 bolaElemento.style.left=`${parseInt(this.posX)}px`;  //Forma de concatenar texto con variables  y llamar a funciones
 let linearGradient=`linear-gradient(${lgAngulo}deg,${colorInicial},${colorFinal})`;  //Lo mismo.  Comillas al lado de la P, Dollar y llaves para variable o funcion.
 
+Math.floor();// Redondea hacia abajo, es decir, elimina la parte decimal.
+Math.ceil();// Redondea hacia arriba, es decir, elimina la parte decimal.
+Math.round();// Redondea el entero mas cercano.
 
+
+
+
+                        //ARRAYS
+    //SPLICE   eliminar elementos de cualquier posición del array y/o insertar otros en su lugar. Devuelve un array con los elementos eliminados.
+//Array.splice(posicion, num. de elementos a eliminar, 1º elemento a insertar, 2º elemento a insertar, 3º...) 
+let a = ['Lunes', 'Martes', 2, 4, 6] 
+let borrado = a.splice(1, 3)       // ahora a = ['Lunes', 6] y borrado = ['Martes', 2, 4] 
+a = ['Lunes', 'Martes', 2, 4, 6] 
+borrado = a.splice(1, 0, 45, 56)   // ahora a = ['Lunes', 45, 56, 'Martes', 2, 4, 6] y borrado = [] 
+a = ['Lunes', 'Martes', 2, 4, 6] 
+borrado = a.splice(1, 3, 45, 56)   // ahora a = ['Lunes', 45, 56, 6] y borrado = ['Martes', 2, 4] 
+
+
+    //SLICE   Devuelve  un  subarray  con  los  elementos  indicados,  pero  sin  modificar  el  array  original.
+//Array.slice(posicion, num. de elementos a devolver)
+
+
+//ordenar un array de cadenas sin tener en cuenta si son mayúsculas o minúsculas: 
+let ab = ['hola','adios','Bien','Mal'] 
+let b = ab.sort(function(elem1, elem2) { 
+  if (elem1.toLocaleLowerCase() < elem2.toLocaleLowerCase()) return -1; 
+  if (elem1.toLocaleLowerCase() > elem2.toLocaleLowerCase()) return 1; 
+  if (elem1.toLocaleLowerCase() = elem2.toLocaleLowerCase()) return 0; 
+}); 
+         // b = ["adios", "Bien", "hola", "Mal"]
+//ORDENAR OBJETOS:
+let personas = [persona1, persona2, persona3];
+let personasOrdenado = personas.sort((persona1, persona2)  => persona1.edad-persona2.edad);
+
+
+
+//PROGRAMACION FUNCIONAL (en arrays)- Buscando el resultado que queremos obtener
+
+
+//Filter   filtra
+let arrayNotas = [5.2, 3.9, 6, 9.75, 7.5, 3] ;
+let aprobados = arrayNotas.filter(nota  => nota >=  5) ;
+// aprobados = [5.2, 6, 9.75, 7.5]
+
+//Find. NO devuelve un array, devuelve el primer elemento que cumpla la condición
+let primerAprobado = arrayNotas.find(nota  => nota >=  5)    // primerAprobado = 5.2
+
+//findIndex.  Igual q find pero sólo devuelve la posición.
+let posAprobado = arrayNotas.find(nota  => nota >=  5)    // posAprobado = 0
+
+// every / some 
+// • every devuelve true si TODOS los elementos del array cumplen la condición y false en caso contrario.  
+// • some devuelve true si ALGÚN elemento del array cumple la condición.
+let todosAprobados = arrayNotas.every(nota  => nota >=  5)   // false 
+let algunAprobado = arrayNotas.some(nota  => nota >=  5)     // true
+
+//map  permite  modificar  cada  elemento  de  un  array  y  devuelve  un  nuevo  array  con  los  elementos  del  original modificados
+let arrayNotasSubidas = arrayNotas.map(nota  => nota + nota * 0.1);  //Sube las notas un 10%
+
+
+//SET. Una forma sencilla de eliminar los duplicados de un array es crear con él un Set:
+let ganadores = ['Márquez', 'Rossi', 'Márquez', 'Lorenzo', 'Rossi', 'Márquez', 
+'Márquez'] 
+let ganadoresNoDuplicados = new Set(ganadores)    // {'Márquez, 'Rossi', 'Lorenzo'}
+// o si lo queremos en un array: 
+ ganadoresNoDuplicados = Array.from(new Set(ganadores)) // ['Márquez, 'Rossi', 'Lorenzo'] 
