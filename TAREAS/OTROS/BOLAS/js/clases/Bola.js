@@ -60,6 +60,11 @@ export class Bola {
         bola.style.height = this.height + "px";
         bola.style.backgroundColor = this.color;
         bola.style.borderRadius = "50%";
+		bola.style.display = 'flex';
+		bola.style.justifyContent ='center';
+		bola.style.alignItems = 'center';
+
+	
         document.body.appendChild(bola);
 		bola.addEventListener ('click', this.identificar);
 		bola.addEventListener ('dblclick', this.eliminar);

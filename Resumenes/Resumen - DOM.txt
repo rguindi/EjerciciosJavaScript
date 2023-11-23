@@ -80,7 +80,7 @@ miPrimeraLista.style.backgroundColor = 'red';           //Lo normal es cambiar l
 
 elemento.classList.add('nuevaclase')   //Añade nueva clase
 elemento.classList.remove('clase')   //Elimina clase
-elemento.classList.toogle('clase')   //Elimina si la tiene la añade si no la tiene
+elemento.classList.toggle('clase')   //Elimina si la tiene la añade si no la tiene
 elemento.classList.contains('direccion');  //devuekve true o false
 elemento.classList.replace(oldClase, newClase)
 

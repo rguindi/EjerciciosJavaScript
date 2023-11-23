@@ -108,12 +108,8 @@ class BiggerTriple extends Tripple{
 console.log(Tripple.triple(3));         //3
 console.log(BiggerTriple.triple(3));        //81
 
------------------------ATRIBUTOS ESTATICOS--------------------------
+-----------------------ATRIBUTOS ESTATICOS---- CONSTANTES ESTATICAS----------------------
 Atributo q pertenece a la clase y no al objeto
-class Alumno { 
-    static contadorObjetosAlumno = 0; 
-....}
-// ATRIBUTO ESTATICO CONSTANTE
 No utilizamos const, hacemos funcion get q devuelve el valor (no hacemos set)
 static get MAX_OBJ(){ 
         return 5; 

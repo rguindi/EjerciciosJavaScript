@@ -31,5 +31,13 @@ NOTA: el orden de secuencia de los eventos es: keyDown -> keyPress -> keyUp
 • submit / reset: al enviar/recargar un formulario.
 
 
+------AL LLAMPRODUCIRAR EVENTO---
+  event: es un objeto, y la función escuchadora lo recibe como parámetro.   Ver funciones en pdf
+ this: siempre hace referencia al elemento que contiene el código 
 
-        //FALTA PARTE DE RESUMEN DE EVENTOS. NO VISTO AUN
+ element.addEventListener('focus', pintar); //Al hacer clic los pone en amarillo 
+
+ function pintar(even){ 
+  console.log(even.target.id);                   //id del elemento
+  this.style.backgroundColor='yellow'; 
+} 

@@ -31,22 +31,22 @@ let alumnos = [
 
 
     //añadir
-a.push('Juan')  //Al principio
-a.unshift(7)    //Al final
+a.push('Juan')  //Al final
+a.unshift(7)    //Al Principio
 
     //Borrar
 let a = ['Lunes', 'Martes', 2, 4, 6] 
 a.pop()         // Borra ultimo
 a.shift()      // Borra primero
 
-    //SPLICE. Borra y añade. Devuelve un array y modifica original
-let nuevoarray = Array.splice(posicion, num. de elementos a eliminar, 1º elemento a insertar, 2º elemento a insertar, 3º...)   //Deben coincidir, si no se pone insecion solo borra
+    //SPLICE. Borra y añade. Devuelve un array con eliminados  y modifica original
+let nuevoarray = Array.splice(posicion, num. de elementos a eliminar, 1º elemento a insertar, 2º elemento a insertar, 3º...)   //Deben coincidir, si no se pone insercion solo borra
 
     //SLICE. Devuelve un array sin modificar original. Parecido a substr
 Array.slice(posicion, num. de elementos a devolver)
 
 
-//Convertir array en cadena con Join()
+//Convertir array en cadena con Join()  Convierte array en cadena
 let a = ['Lunes', 'Martes', 2, 4, 6] 
 let cadena = a.join('-')       // cadena = 'Lunes-Martes-2-4-6'
 

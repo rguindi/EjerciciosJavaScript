@@ -1,5 +1,5 @@
 -------TIMERS----
-- setTimeout(función, milisegundos): ejecuta la función especificada una sola vez       //const idTimeout = setTimeout (muestraMensaje, 2000); 
+- setTimeout(función, milisegundos): ejecuta la función especificada una sola vez cuando transcurran los milisegundos indicados
 - setInterval(función,  milisegundos):  ejecuta  la  función  especificada  cada  vez 
 
 DETENERLOS
