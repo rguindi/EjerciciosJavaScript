@@ -1,1 +1,0 @@
-import { Generar } from "./clases/Generar.js";
