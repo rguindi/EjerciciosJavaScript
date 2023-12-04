@@ -30,6 +30,7 @@ export class Elemento {
     this._innerText = in_innerText;
   }
   
+
   asignarId(){
 
     let numeroElementos = document.getElementsByTagName(this.tag).length;
@@ -45,7 +46,15 @@ agregarComoPrimeroDe(elemento){
   const elementoHTML = document.createElement(this.tag);
   elementoHTML.innerHTML = this.innerHTML;
   elementoHTML.innerText = this.innerText;
+  elementoHTML.id = this.id;
   elemento.children[0].before(elementoHTML);
+}
+agregarComoUltimoDe(elemento){
+  const elementoHTML = document.createElement(this.tag);
+  elementoHTML.innerHTML = this.innerHTML;
+  elementoHTML.innerText = this.innerText;
+  elementoHTML.id = this.id;
+  elemento.lastChild.after(elementoHTML);
 
 }
 
