@@ -6,5 +6,7 @@ export class Texto extends Elemento {
         super._innerText = texto;  
     }
 
-
+cambioColor(color){
+    super.nuevoEstilo("color", color);
+}
 }
