@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>Configurar</title>
+  </head>
+  <body>
+    <header>
+      <img src="./img/logoi.png" alt="No se encuentra la imagen" />
+    </header>
+    <main>
+      <div id="juego" class="juego">
+        <spam class="titulo">Configuración</spam>
+        <a href="./index.html"><button class="configurar" onclick="empezar()" >Empezar a Jugar</button></a> <br><br>
+       
+            <h2>Dinero Restante</h2> <input id="dineroRestante" class="btn-apuesta" type="number" value="5" ><br>
+            <h2>Valor de las apuestas</h2> <input id="valorApuesta" class="btn-apuesta" type="number" value="100" ><br>
+            <h2>Activar Sonido</h2> <input id="activaSonido" class="btn-apuesta" type="checkbox" checked><br>
+            <h2>Color de Fondo</h2> <select name="fondo" id="fondo" onchange="colorFondo()" >
+              <option value="red">Rojo</option>
+              <option value="blue">Azul</option>
+              <option value="grey">Gris</option>
+            </select>
+          
+
+
+    
+            
+      
+      </div>
+    </main>
+
+    <script src="./js/funciones.js"></script>
+  </body>
+</html>

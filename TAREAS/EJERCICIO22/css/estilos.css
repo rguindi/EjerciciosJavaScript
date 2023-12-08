@@ -5,12 +5,17 @@ main{
 audio{
     display: none;
 }
+
+h2{
+    display: inline;
+    margin-right: 30px;
+}
 header{
     text-align: center;
 }
 .juego{
     align-self: center;
-    background-color: rgb(27, 157, 190);
+    background-color: grey;
     border-radius: 15px;
     color: rgb(231, 231, 231);
     text-align: center;
@@ -53,6 +58,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     font-size: 30px;
     width: 3em;
     text-align: center;
+    background-color: rgb(231, 231, 231);
 }
 table, tr, td, th{
     border: 1px solid black;
@@ -67,7 +73,7 @@ table, tr, td, th{
     margin: 30px;
     
  
-    color:green;
+    color:rgb(0, 112, 64);
     font-size: 40px;
     font-weight: bold;
 }
