@@ -1,0 +1,73 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+audio{
+    display: none;
+}
+header{
+    text-align: center;
+}
+.juego{
+    align-self: center;
+    background-color: rgb(27, 157, 190);
+    border-radius: 15px;
+    color: rgb(231, 231, 231);
+    text-align: center;
+    width: fit-content;
+    padding: 30px;
+
+}
+.titulo{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.configurar{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(225, 40, 185);
+    border-radius: 5px;
+    margin-left: 20px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.configurar:hover{
+    background-color: rgb(209, 233, 56);
+    cursor: pointer;
+}
+.update{
+    width: 100px;
+}
+
+.update:hover{
+    border: solid 2px rgb(209, 233, 56);
+    cursor: pointer;
+}
+.btn-apuesta, .update{
+    border: 2px solid black;
+}
+
+.btn-apuesta{
+    font-size: 30px;
+    width: 3em;
+    text-align: center;
+}
+table, tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    margin: 40px;
+    font-size: 20px;
+}
+.dado{
+    width: 50px;
+    height: 50px;
+    margin: 30px;
+    
+ 
+    color:green;
+    font-size: 40px;
+    font-weight: bold;
+}
