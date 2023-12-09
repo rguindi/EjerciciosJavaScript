@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="stylesheet" href="./css/estilos.css" />
     <title>Ejercicio 22</title>
+  
   </head>
   <body>
     <audio id="audioLanzar" controls>
@@ -29,9 +30,9 @@
         <spam class="titulo">Juego de Dados</spam>
         <a href="./conf.html"><button class="configurar">Configurar</button></a>
         <table>
-          <tr><th>Partida</th><th>Apuesta €<br> <input id="btn-apuesta" class="btn-apuesta" type="text" value="5" disabled></th><th>Jugada</th></tr>
+          <tr><th>Partida</th><th>Apuesta €<br> <spam id="btn-apuesta" class="btn-apuesta"></spam></th><th>Jugada</th></tr>
           
-          <tr><td>Restante: <span id="Restante">100</span>€</td><td><span id="dado1" class="dado">-</span><span id="dado2" class="dado">-</span><br><br><img id="update" class="update" src="./img/download.png" alt="No se encuentra la imagen" onclick="moverDados()" /></td><td>Apostado: <span id="Apostado">5</span>€</td></tr>
+          <tr><td>Restante: <span id="Restante"></span>€</td><td><span id="dado1" class="dado">-</span><span id="dado2" class="dado">-</span><br><br><img id="update" class="update" src="./img/download.png" alt="No se encuentra la imagen" onclick="moverDados()" /></td><td>Apostado: <span id="Apostado"></span>€</td></tr>
           
         </table>
       </div>
