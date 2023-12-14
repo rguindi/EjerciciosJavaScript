@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="a">Introduce un producto</label><input id="a" type="text" />
+
+    <button onclick="add()">Añadir</button>
+    <button onclick="modifica()">modificar</button>
+    <p id="p"></p>
+
+    <ul id="ul"></ul>
+
+    <script>
+      let lista = [];
+
+      function add() {
+        let nombre = document.getElementById("a").value;
+        let borrar = ()=>document.getElementById("a").value = "";
+        lista = [...lista, nombre];
+
+        ul = document.getElementById("ul").innerText = "";
+
+
+        lista.forEach((element) => {
+
+          ul = document.getElementById("ul");
+
+          let li = document.createElement("li");
+          li.innerText = element;
+          let button = document.createElement ('button');
+          button.innerText = 'Eliminar';
+          li.appendChild(button);
+          ul.appendChild(li);
+        });
+        borrar();
+      }
+
+      function modifica(){
+        let valor = window.prompt('Introduce Elemento.');
+        console.log(valor);
+      }
+
+
+    </script>
+  </body>
+</html>

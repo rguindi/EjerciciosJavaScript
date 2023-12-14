@@ -1,0 +1,19 @@
+#Contenedor{
+    border: 1px solid black;
+    max-width: fit-content;
+    min-height: 100px;
+    padding: 20px;
+    background-color: rgb(255, 105, 105);
+}
+.visor{
+    width: 80%;
+}
+#historico, #pantalla{
+    width: 100%;
+}
+.boton{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+}
