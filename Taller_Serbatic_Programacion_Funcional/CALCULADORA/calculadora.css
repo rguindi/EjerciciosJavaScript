@@ -9,8 +9,17 @@ body{
     padding: 20px;
     background-color: rgb(255, 105, 105);
 }
+.borrar{
+    display: flex;
+    justify-content: end;
+}
 .visor{
     width: 80%;
+}
+input{
+    background-color: rgb(255, 255, 255);
+    text-align: end;
+    font-size: 18px;
 }
 #historico, #pantalla{
     width: 100%;

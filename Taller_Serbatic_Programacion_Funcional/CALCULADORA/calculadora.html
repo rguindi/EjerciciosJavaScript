@@ -9,28 +9,35 @@
   <body>
     <div id="Contenedor">
 
-      <input id="historico" type="text" /> <br />
-      <input id="pantalla" type="text" /><br />
+      <input id="historico" type="text"  disabled /> <br />
+      <input id="pantalla" type="text" value = "0" disabled /><br />
    
       <br />
       <div class="botones">
-        <button id="7" class="boton">7</button>
-        <button id="8" class="boton">8</button>
-        <button id="9" class="boton">9</button>
-        <button id="divide" class="boton">/</button> <br />
-        <button id="4" class="boton">4</button>
-        <button id="5" class="boton">5</button>
-        <button id="6" class="boton">6</button>
-        <button id="multiplica" class="boton">X</button> <br/>
-        <button id="1" class="boton">1</button>
-        <button id="2" class="boton">2</button>
-        <button id="3" class="boton">3</button>
-        <button id="resta" class="boton">-</button><br/>
-        <button id="0" class="boton">0</button>
+        <div class="borrar">
+        <button id="borrarTodo" class="boton" onclick = "borraTodo()">AC</button>
+        <button id="borrar" class="boton" onclick = "borra()">C</button>
+      </div>
+        <button id="7" class="boton" onclick = "add7()">7</button>
+        <button id="8" class="boton" onclick = "add8()">8</button>
+        <button id="9" class="boton" onclick = "add9()">9</button>
+        <button id="divide" class="boton" onclick = "dividir()">/</button> <br />
+        <button id="4" class="boton" onclick = "add4()">4</button>
+        <button id="5" class="boton" onclick = "add5()">5</button>
+        <button id="6" class="boton" onclick = "add6()">6</button>
+        <button id="multiplica" class="boton" onclick = "multiplicar()">X</button> <br/>
+        <button id="1" class="boton" onclick = "add1()">1</button>
+        <button id="2" class="boton" onclick = "add2()">2</button>
+        <button id="3" class="boton" onclick = "add3()">3</button>
+        <button id="resta" class="boton" onclick = "restar()">-</button><br/>
         <button id="punto" class="boton">.</button>
-        <button id="suma" class="boton">+</button>
-        <button id="resultado" class="boton">=</button>
+        <button id="0" class="boton" onclick = "add0()">0</button>
+        <button id="suma" class="boton" onclick = "sumar()">+</button>
+        <button id="resultado" class="boton"  onclick = "resultado()" >=</button>
       </div>
     </div>
+
+
+    <script src="./js/app.js"></script>
   </body>
 </html>
