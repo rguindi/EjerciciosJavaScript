@@ -117,15 +117,25 @@ function add9() {
     historico.value += 9;
   }
 }
+function addPunto() {
+  if (!comprueba0()) {
+    pantalla.value += '.';
+    historico.value += '.';
+  }
+}
 
 
 //Funciones para resto de botones
 function borra() {
+  let num = pantalla.value.length;  //numero de caracteres a borrar del historico
   pantalla.value = 0;
+  historico.value = historico.value.slice(0,-num);
+
 }
 function borraTodo() {
   pantalla.value = 0;
   historico.value = null;
+  numeros.length=0;
 }
 
 function sumar() {
