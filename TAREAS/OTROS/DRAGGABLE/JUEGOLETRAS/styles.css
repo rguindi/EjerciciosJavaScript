@@ -1,0 +1,40 @@
+
+table, th{
+    border: solid 1px black;
+    border-collapse: collapse;
+    min-width: 100px;
+    min-height: 100px;
+    
+  }
+
+  .letras
+{
+
+max-width: 100px;
+    
+
+}
+
+.may{
+
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 100px;
+    cursor: grab;
+    position: absolute;
+
+}
+
+  .draggable {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 100px;
+    cursor: grab;
+  }
+
