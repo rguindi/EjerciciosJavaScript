@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="" name="for">
+
+
+    <select id="genres">
+        <option value="rock">Rock</option>
+        <option value="blues" selected>Blues</option>
+      </select>
+</form>
+      <p>      Utiliza JavaScript para:
+      
+        Mostrar el valor y el texto del option seleccionado.
+        Añadir un option: <option value="classic">Classic</option>.
+        Seleccionarlo.
+        Nota, si haz hecho todo bien, tu alert debería mostrar blues.
+      </p>
+
+      <script>
+        let select = document.createElement('option');
+        select.setAttribute('value', 'classic'); 
+        select.innerText = 'Classic';
+        document.getElementById('genres').appendChild(select);
+
+
+      </script>
+
+</body>
+</html>
