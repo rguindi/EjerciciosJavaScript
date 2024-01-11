@@ -23,10 +23,16 @@
       </p>
 
       <script>
+
+        let seleccionado = document.getElementById('genres').value;
+        alert(seleccionado);
+
         let select = document.createElement('option');
         select.setAttribute('value', 'classic'); 
         select.innerText = 'Classic';
-        document.getElementById('genres').appendChild(select);
+        document.getElementById('genres').append(select);
+
+        select.selected = true;
 
 
       </script>
