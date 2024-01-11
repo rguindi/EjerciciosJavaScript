@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Formulario con Validación</title> 
+    <style> 
+    input:invalid { 
+  border: 2px dashed red; 
+}
+.error{
+    color: red;
+}
+    </style> 
+</head> 
+<body> 
+    <h2>Formulario de Validación</h2> 
+ 
+    <form novalidate> 
+        <label for="nombre">Por favor, introduzca su nombre (entre 5 y 50 caracteres): </span> 
+        <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50"> 
+        <span class="error"></label> 
+        <br /> 
+        <label for="mail">Por favor, introduzca una dirección de correo electrónico: </label> 
+        <input type="email" id="mail" name="mail" required minlength="8"> 
+        <span class="error"></span> 
+        <br /> 
+        <button type="submit">Enviar</button> 
+      </form> 
+
+
+      
+    <script> 
+        const form  = document.getElementsByTagName('form')[0]; 
+ 
+ const nombre = document.getElementById('nombre'); 
+ const nombreError = document.querySelector('#nombre + span.error'); 
+ const email = document.getElementById('mail'); 
+ const emailError = document.querySelector('#mail + span.error'); 
+  
+ form.addEventListener('submit', (event) => { 
+   if(!form.checkValidity()) { 
+     event.preventDefault(); 
+   } 
+   nombreError.textContent = nombre.validationMessage; 
+   emailError.textContent = email.validationMessage; 
+ });
+    </script> 
+     
+</body> 
+</html>
