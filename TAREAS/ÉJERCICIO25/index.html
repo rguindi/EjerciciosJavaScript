@@ -1,50 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <form action="" onsubmit="return validarFormulario()" >
-        <input id="nombre" name="nombre" type="text" required><label for="nombre">Nombre</label><br>
-        <span id="errorNombre" class="error"></span>
-        <input id="email" name="email" type="email" required><label for="email">Email</label><br>
-        <input id="pass" name="pass" type="text" required><label for="pass">Contraseña</label><br>
-        <input id="edad" name="edad" type="number" required><label for="edad">Edad</label><br>
-        <span>Género</span>
-        <input id="hombre" name="genero" type="radio"  value="hombre" required><label for="genero">Hombre</label>
-        <input id="mujer" name="genero" type="radio"  value="mujer" required><label for="genero">Mujer</label><br>
-        <input id="condiciones" name="condiciones" type="checkbox" required><label for="genero">condiciones</label><br>
-        <button type="submit" >Enviar</button>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" onsubmit="return validarFormulario()">
+      <input id="nombre" name="nombre" type="text" /><label for="nombre"
+        >Nombre</label
+      ><span class="error" id="errorNombre"></span><br />
+      <input id="email" name="email" type="email" /><label for="email"
+        >Email</label
+      ><span class="error" id="errorEmail"></span><br />
+      <input id="pass" name="pass" type="password" /><label for="pass"
+        >Contraseña</label
+      ><span class="error" id="errorPass"></span><br />
+      <input id="pass2" name="pass2" type="password" /><label for="pass2"
+        >Repite Contraseña</label
+      ><span class="error" id="errorPass2"></span><br />
+      <input id="edad" name="edad" type="number" /><label for="edad">Edad</label
+      ><span class="error" id="errorEdad"></span><br />
+      <span>Género</span>
+      <input id="hombre" name="genero" type="radio" value="hombre" /><label
+        for="genero"
+        >Hombre</label
+      >
+      <input id="mujer" name="genero" type="radio" value="mujer" /><label
+        for="genero"
+        >Mujer</label
+      ><span class="error" id="errorGenero"></span><br />
+      <input id="condiciones" name="condiciones" type="checkbox" /><label
+        for="genero"
+        >condiciones</label
+      ><span class="error" id="errorCondiciones"></span><br />
+      <button type="submit">Enviar</button>
     </form>
 
     <script>
-
-        // Nombre
-        const nombre = document.getElementById("nombre");
-        nombre.setCustomValidity('Por favor, ingresa tu nombre');
-        nombre.customError;
-
-        nombre.addEventListener('input', validaNombre);
-        function validaNombre(){
-        if(nombre.validity.valueMissing){
-            nombre.valid;
+      function validarFormulario() {
+        //validar nombre
+        let nombre = document.getElementById("nombre");
+        let error = document.getElementById("errorNombre");
+        if (nombre.value == "") {
+          error.innerText = " Por favor, ingresa tu nombre.";
         }
-    }
 
-    //    function  validarFormulario(){
-    //        if(nombre.validity.valueMissing){
-    //         nombre.valid;
-    //        }
-    //     }
+        //Validar email
+        let email = document.getElementById("email");
+        error = document.getElementById("errorEmail");
+        exp = /\S+@\S+\.\S+/;
+        if (email.value == "") {
+          error.innerText = " Por favor, ingresa tu email.";
+        } else if (!exp.test(email.value))
+          error.innerText = " Por favor, ingresa un email válido.";
 
-        
+        //Validar contraseña
+        let pass = document.getElementById("pass");
+        error = document.getElementById("errorPass");
+        if (pass.value == "") {
+          error.innerText = " Por favor, ingresa tu contraseña.";
+        } else if (pass.value.length < 8)
+          error.innerText = " La contraseña debe tener al menos 8 caracteres.";
 
+        //Repite contraseña
+        let pass2 = document.getElementById("pass2");
+        error = document.getElementById("errorPass2");
+        if (pass2.value == "") {
+          error.innerText = " Por favor, repite tu contraseña.";
+        } else if (pass.value != pass2.value)
+          error.innerText = " Las contraseñas no coinciden.";
 
-       
+        //Validar edad
+        let edad = document.getElementById("edad");
+        error = document.getElementById("errorEdad");
+        if (edad.value == "") {
+          error.innerText = " Por favor, ingresa tu edad.";
+        } else if (edad.value < 18 || edad.value > 99)
+          error.innerText = "Debes tener al menos 18 años para registrarte.";
 
-    
+        //Validar género
+        let genero = document.getElementsByName("genero");
+        error = document.getElementById("errorGenero");
+        if (genero[0].checked == false && genero[1].checked == false) {
+          error.innerText = " Selecciona tu género.";
+        }
+
+        //Validar condiciones
+        let condiciones = document.getElementById("condiciones");
+        error = document.getElementById("errorCondiciones");
+        if (condiciones.checked == false) {
+          error.innerText = " Debes aceptar las condiciones.";
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
