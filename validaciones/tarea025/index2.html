@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>Document</title>
     <style>
         .error{
@@ -14,7 +13,7 @@
 <body>
         <h2>Formulario de Registro ver 1</h2>
    
-        <form novalidate id="registroForm" nombre="f1">
+        <form novalidate id="registroForm" nombre="f1" onsubmit="return enviarFormulario()">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
             <span id="errorNombre" class="error"></span>
@@ -55,6 +54,6 @@
    
             <input type="submit" value="Registrarse" id="botonReg">
         </form>
-        <script src="funciones1.js"></script>
+        <script src="funciones2.js"></script>
 </body>
 </html>
