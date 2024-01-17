@@ -67,7 +67,7 @@ document.getElementById('registroForm').addEventListener('submit', function(even
     // validar términos y condiciones
     if(!terminos.checkValidity()){
         mostrarError('errorTerminos', 'Debes aceptar los términos y condiciones.');
-        terminos.focus();
+        // terminos.focus();
     }
 
     
