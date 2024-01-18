@@ -11,4 +11,4 @@ npm install mysql
 
 npm install nodemon --save-dev     
 añadimos "start": "nodemon app.js" a package.json
-npm run start
+npm run start Para funcionar con nodemon
