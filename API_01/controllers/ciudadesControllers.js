@@ -107,6 +107,25 @@ const actualizarCiudad = (req,res)=>{  //http://localhost:3000/ciudades/3
     });
 }
 
+//borrar ciudad
+const deleteCiudad = (req,res)=>{
+    const idRegistro = req.params.id;
+    db.query('DELETE FROM ciudades WHERE ID = ?', [idRegistro], (err, resultado)=>{
+        if(err){
+            console.error('Error al eliminar de la base de datos', err);
+            res.status(500).json({error:'Error interno en el servidor'});
+        } else{
+            //Verificamos si se encontro un registro
+            if(resultado.affectedRows>0){
+                res.json({mensaje: `Registro con id ${idRegistro} se eliminó correctamente.`});
+            }else{
+                res.status(404).json({error:  `No se encontró el registro con id ${idRegistro}.`});
+            }
+
+        }
+    });
+}
+
 
 module.exports={
     getCiudades,
@@ -114,5 +133,6 @@ module.exports={
     getCiudadById,
     putCiudad,
     patchCiudad,
-    actualizarCiudad
+    actualizarCiudad,
+    deleteCiudad
 };

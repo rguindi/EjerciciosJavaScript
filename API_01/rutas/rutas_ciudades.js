@@ -10,6 +10,7 @@ rutasCiudades.get('/:id', ciudadesController.getCiudadById);  //:id indica q es 
 rutasCiudades.put('/put/:id', ciudadesController.putCiudad); 
 rutasCiudades.patch('/patch/:id', ciudadesController.patchCiudad); 
 rutasCiudades.patch('/:id', ciudadesController.actualizarCiudad); 
+rutasCiudades.delete('/:id', ciudadesController.deleteCiudad);
 
 //exportamos la constante routes
 module.exports = rutasCiudades;
