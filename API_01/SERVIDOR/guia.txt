@@ -12,3 +12,10 @@ npm install mysql
 npm install nodemon --save-dev     
 añadimos "start": "nodemon app.js" a package.json
 npm run start Para funcionar con nodemon
+
+
+quitar error CORS
+paramos aPI
+instalamos CORS   npm install cors
+en app.js  const cors = require ('cors');
+app.use(cors());

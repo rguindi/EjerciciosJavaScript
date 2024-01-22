@@ -1,10 +1,11 @@
 const express=require('express');           //npm -i express
+const cors = require ('cors');
 const app=express();
 // const mysql = require('mysql');
 const rutasCiudades = require('./rutas/rutas_ciudades');
 const puerto=3000;
 
-
+app.use(cors());
 
 app.use(express.json());    //MIddelware para parsear el cuerpo de las peticiones en JSON
 
