@@ -14,9 +14,23 @@ peticion.onreadystatechange = function(){ //Evento q salga al cambiar de estado
         if (peticion.status==200){ //200 respuesta correcta
             let datos = JSON.parse(peticion.responseText);  //de JSON a array
             console.log('Datos recibidos; ', datos);
+
             datos.forEach(element => {
-                let p = document.createElement('p');
-                p.innerHTML = element.nombre;
+                let b = document.createElement('button');  //boton ciudad
+                let span = document.createElement('span');   //Habitantes
+                span.innerHTML = element.cantidad;
+                span.style.display = 'none';
+               span.id = element.name;
+
+               b.addEventListener('click', ()=>{
+                
+                    span.style.display = 'inline';
+                    
+               });
+                let p = document.createElement('p');      //contenedor
+                b.innerHTML = element.nombre;
+                p.appendChild(b);
+                p.appendChild(span);
                 document.getElementById('b1').insertAdjacentElement('afterend', p);
             });
 

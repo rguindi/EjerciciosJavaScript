@@ -7,10 +7,24 @@
     <title>Peticiones</title>
 </head>
 <body>
-    <button id="b1">1º Peticion</button>
+    <h1>POST con XMLHTTPREQUEST</h1>
+    <form action="" id="addCiudad" name="addCiudad" method="get">
+        <label for="nuevoNombre">nuevoNombre
+            <input type="text" name="nuevoNombre" id="nuevoNombre">
+        </label>
+
+        <label for="habitantes">habitantes
+            <input type="text" name="habitantes" id="habitantes" required>
+        </label>
+
+        <button type="submit">Añadir</button>
+    </form>
+
+    <button id="b1">Peticion</button>
 
 
 </body>
-
+<!-- <script src="peticionGet.js"></script> -->
+<script src="peticionPost.js"></script>
 <script src="pet2.js"></script>
 </html>

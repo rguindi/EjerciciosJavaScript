@@ -9,6 +9,9 @@ app.use(cors());
 
 app.use(express.json());    //MIddelware para parsear el cuerpo de las peticiones en JSON
 
+app.use(express.urlencoded({extended: true}));
+
+
 app.use('/ciudades', rutasCiudades); //Asi ciudades es la raiz en rutasciudades
 
 
