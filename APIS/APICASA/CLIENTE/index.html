@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Peticiones API</title>
+</head>
+<body>
+    <form id="miFormulario" name="miFormulario" action="" style="display: flex; flex-direction: column; margin: 50px;">
+        <button id="peticion1">Tabla con todas las ciudades</button>
+        <button id="peticion2">Tabla con ciudades mayores a 1mill hab por JS</button>
+        <button id="peticion3">Tabla con ciudades que su nombre empiece por A y mas de 1mill h. por JS</button>
+        <h3>FORMULARIO PARA INTRODUCIR CIUDAD</h3>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduce una nombre">
+        <input type="text" id="cp" name="cp" placeholder="Introduce un codigo pais (ARG)"> 
+        <input type="text" id="distrito" name="distrito" placeholder="Introduce un distrito(Luanda)">
+        <input type="number" id="poblacion" name="poblacion" placeholder="poblacion">
+        <button id="insertar" name="insertar">Insertar ciudad</button>
+
+    </form>
+
+    <table id="tabla">
+
+    </table>
+    <script src="app.js"></script>
+</body>
+</html>
