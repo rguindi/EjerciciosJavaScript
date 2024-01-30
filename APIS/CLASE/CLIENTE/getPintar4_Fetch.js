@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
       alert('Debes introducir un número') 
     } else { 
       fetch(url + '/ciudades/' + idCiudad) 
-        .then((response) => response.json())                                //NOFUNCIONA
+        .then((response) => JSON.parse(response))                   
         .then((datos) => { 
            // aquí pintamos los datos. Habrá casos que será muy extenso. 
            document.getElementById('p1').innerHTML = datos.nombre+"  "+datos.cantidad; 
