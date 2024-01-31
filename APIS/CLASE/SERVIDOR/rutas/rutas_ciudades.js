@@ -11,6 +11,7 @@ rutasCiudades.put('/put/:id', ciudadesController.putCiudad);
 rutasCiudades.patch('/patch/:id', ciudadesController.patchCiudad); 
 rutasCiudades.patch('/:id', ciudadesController.actualizarCiudad); 
 rutasCiudades.delete('/:id', ciudadesController.deleteCiudad);
+rutasCiudades.get('/habitantes/:min/:max', ciudadesController.getCiudadesByHabitantes);
 
 //exportamos la constante routes
 module.exports = rutasCiudades;

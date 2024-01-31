@@ -1,4 +1,4 @@
-// peticion FETCH con JSON que FUNCIONA CON PROMESAS
+// peticion FETCH con JSON que FUNCIONA CON PROMESAS   SIMULACION DE LA API
 // const dirIP_api = '127.0.0.1'; // O asignar el valor que necesitas
 // const PUERTO_EXPRESS = 3000; // O asignar el valor que necesitas
 
@@ -25,13 +25,15 @@ window.addEventListener('load', () => {
     if (isNaN(idCiudad) || idCiudad.trim() == '') { 
       alert('Debes introducir un número') 
     } else { 
-      fetch(url + '/ciudades/' + idCiudad) 
-        .then((response) => JSON.parse(response))                   
+
+
+      fetch(url + '/ciudades/' + idCiudad)
+        .then((response) => JSON.parse(response))         //USAMOS ESTE METODO PORQUE ES UNA SIMULACION DE LA API          
         .then((datos) => { 
            // aquí pintamos los datos. Habrá casos que será muy extenso. 
            document.getElementById('p1').innerHTML = datos.nombre+"  "+datos.cantidad; 
         }) 
-        .catch((error) => console.error(error)) 
+        .catch((error) => console.error(error));
     } 
 
   }) ;

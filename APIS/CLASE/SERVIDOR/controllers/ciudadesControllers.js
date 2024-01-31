@@ -126,6 +126,37 @@ const deleteCiudad = (req,res)=>{
     });
 }
 
+const getCiudadesByHabitantes = (req, res) => {
+    try {
+      // Obtén los valores mínimos y máximos del rango desde los parámetros de consulta
+      const minHabitantes = parseInt(req.params.min, 10) || 0; // Valor mínimo, por defecto 0
+      const maxHabitantes = parseInt(req.params.max, 10) || Number.MAX_SAFE_INTEGER; // Valor máximo, por defecto infinito
+  
+      console.log(minHabitantes);
+      console.log(maxHabitantes);
+  
+      // Ejecuta la consulta SQL para obtener ciudades en el rango especificado
+      db.query('SELECT * FROM ciudades WHERE cantidad BETWEEN ? AND ?', [minHabitantes, maxHabitantes], (err, resultados) => {
+        if (err) {
+          console.error("Error en la consulta:", err);
+          res.status(500).json({ error: 'Error interno del Servidor' });
+        } else {
+          // Verificamos si se encontró algo
+          if (resultados.length > 0) {
+            res.json({ ciudades: resultados });
+          } else {
+            res.status(404).json({ error: `No se encontraron ciudades con esos requisitos` });
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error en el controlador:', error);
+      res.status(500).json({ error: 'Error interno del Servidor' });
+    }
+  };
+
+
+
 
 module.exports={
     getCiudades,
@@ -134,5 +165,6 @@ module.exports={
     putCiudad,
     patchCiudad,
     actualizarCiudad,
-    deleteCiudad
+    deleteCiudad,
+    getCiudadesByHabitantes
 };

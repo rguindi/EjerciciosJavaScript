@@ -13,7 +13,7 @@ function getCiudad(idCiudad) {
         resolve(JSON.parse(peticion.responseText));
       } else {
         reject(
-          "Error " + this.status + " (" + this.statusText + ") en la petición"
+          "Error " + peticion.status + " (" + peticion.statusText + ") en la petición"
         );
       }
     });
@@ -26,12 +26,11 @@ function getCiudad(idCiudad) {
 document.getElementById("getCiudad").addEventListener("submit", (event) => {
   event.preventDefault();
   const idCiudad = document.getElementById("id-ciudad").value;
-  datos = getCiudad(idCiudad);
-  console.log(datos); // pintamos los datos en consola, no habran llegado aun!
-  datos.then(function(datos) { 
+  getCiudad(idCiudad)
+  .then(function(datos) { 
     document.getElementById('p1').innerHTML = datos.nombre+"  "+datos.cantidad; //pintamos los datos
-  }) 
-  datos.catch(function(error) { 
-    console.error(error) 
   })
+  .catch(function(error) { 
+    console.error("error personalizado"+ error) ;
+  });
 });

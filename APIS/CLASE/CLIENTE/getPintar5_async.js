@@ -1,4 +1,4 @@
-// fetch con async/await 
+// fetch con async/await API FETCH
 // tratando errores con try-catch 
 const url=`http://${dirIP_api}:${PUERTO_EXPRESS}`;
  
