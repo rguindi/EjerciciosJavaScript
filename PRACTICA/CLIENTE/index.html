@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Prueba</title>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Buscar todos los clientes -->
+<button id="findAll">Mostrar todos</button>   
+
+<br><br>
+
+
+
+
+<!-- Formulario validado para insertar un cliente -->
+<form novalidate id="registroForm" nombre="f1">
+
+    <!-- Id -->
+    <label for="id">Id:</label>
+    <input type="number" id="id_cliente" name="id_cliente" required>
+    <span id="errorId" class="error"></span>
+    <br>
+
+    <!-- Nombre -->
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <span id="errorNombre" class="error"></span>
+    <br>
+
+    <!-- Direccion -->
+    <label for="direccion">Direccion:</label>
+    <input type="text" id="direccion" name="direccion" required>
+    <span id="errorDireccion" class="error"></span>
+    <br>
+
+    <!-- Telefono -->
+    <label for="telefono">Telefono:</label>
+    <input type="text" id="telefono" name="telefono" required>
+    <span id="errorTelefono" class="error"></span>
+    <br>
+
+    <input type="submit" value="insertar" id="bInsertar">
+</form>
+
+
+
+
+
+
+
+<ul id="tabla" ></ul>
+
+
+<script src="./peticiones.js"></script>
+<script src="./validaciones.js"></script>
+</body>
+</html>
