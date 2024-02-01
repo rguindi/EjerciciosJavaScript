@@ -1,8 +1,10 @@
-// fetch con async/await API FETCH
+// fetch con async/await API FETCH con errores
 // tratando errores con try-catch 
+const dirIP_api = '127.0.0.1'; // O asignar el valor que necesitas
+const PUERTO_EXPRESS = 3000; // O asignar el valor que necesitas
 const url=`http://${dirIP_api}:${PUERTO_EXPRESS}`;
  
-window.addEventListener('load', () => { 
+
   document.getElementById('getCiudad').addEventListener('submit', async (event) => { 
     event.preventDefault(); 
     let isCiudad = document.getElementById('id-ciudad').value 
@@ -21,14 +23,21 @@ window.addEventListener('load', () => {
         } 
     } 
   }) 
-}) 
+
 
 
 async function getData(isCiudad) { 
     const response = await fetch(url + '/ciudades/' + isCiudad) 
-    if (!response.ok) { 
-      throw `Error ${response.status} de la BBDD: ${response.statusText}` 
-    } 
-    const datos = await response.json() 
-    return datos 
+    try {
+      if (!response.ok) { 
+        throw `Error ${response.status} de la BBDD: ${response.statusText}` 
+      } 
+      const datos = await response.json() 
+      return datos
+      
+    } catch (error) {
+      console.log("Fallo fetch");
+      throw error;
+      
+    }
   }

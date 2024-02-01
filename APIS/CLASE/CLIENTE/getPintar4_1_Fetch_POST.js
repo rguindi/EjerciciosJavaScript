@@ -30,7 +30,7 @@ const url=`http://${dirIP_api}:${PUERTO_EXPRESS}`;
         })      
         .then((datos) => { 
            // aquí pintamos los datos. Habrá casos que será muy extenso. 
-           document.getElementById('p1').innerHTML = "Ciudad Añadida" + datos.nombre+"  "+ datos.cantidad; 
+           document.getElementById('p1').innerHTML = "Ciudad Añadida" + datos.nuevoNombre+"  "+ datos.habitantes; 
           }) 
           .catch((error) => console.error(error));
           

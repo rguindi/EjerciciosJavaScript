@@ -32,7 +32,8 @@ window.addEventListener('load', () => {
         .then((datos) => { 
            // aquí pintamos los datos. Habrá casos que será muy extenso. 
            document.getElementById('p1').innerHTML = datos.nombre+"  "+datos.cantidad; 
-        }) 
+           return datos;
+        }) .then(datos=>console.log(JSON.stringify(datos)))         //CONCATENAR THEN
         .catch((error) => console.error(error));
     } 
 
