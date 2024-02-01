@@ -305,3 +305,5 @@ document.getElementById('miFormulario').addEventListener('submit', (event) => {
         console.log(peticion.responseText);
     });
 });
+
+

@@ -5,20 +5,23 @@ const url=`http://${dirIP_api}:${PUERTO_EXPRESS}`;
 const  p = document.getElementById("tabla");
 
 
-//Boton mostrar TODO
+//Boton mostrar TODOS. Asycn await con try catch
 let bfindAll = document.getElementById("findAll");
 let datos = bfindAll.addEventListener("click", async()=>{
-let datos = await findAll();
-console.log(datos);
+let datos = await findAll().then(datos=>{
+  console.log(datos);
+  p.innerHTML = "";
+  datos.forEach(element => {
+      li = document.createElement("li");
+      li.innerHTML = element.nombre;
+      p.appendChild(li);
+  });
+  
+ }).catch(error=>{
+  console.log("mal"+error)
+ })
 
-p.innerHTML = "";
-datos.forEach(element => {
-    li = document.createElement("li");
-    li.innerHTML = element.nombre;
-    p.appendChild(li);
 });
-});
-
 
 async function findAll() {
     const response = await fetch(url + '/clientes/') 
@@ -50,6 +53,8 @@ async function findAll() {
   //console.log(datosForm.get('otrodato'));
   console.log(nombre);
   console.log(id);
+  console.log(direccion);
+  console.log(telefono);
 
   const peticion= new XMLHttpRequest();
   const url = `http://${dirIP_api}:${PUERTO_EXPRESS}/clientes`;

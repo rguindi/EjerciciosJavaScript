@@ -132,7 +132,7 @@ const deleteCliente = (req,res)=>{
 const getClientesByNombreByProducto = (req, res) => {
     try {
       // Obtén los valores de las letras y el producto desde los parámetros de consulta
-    const letraA = req.params.letraA+"%" || ''; 
+    const letraA = req.params.letraA+"%" || '';  //el % es para que busque cualquier nombre que empiece por esa letra
     const letraB = req.params.letraB+"%" || '';
     const producto = req.params.producto || '';
   
