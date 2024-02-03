@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="b1">GET MOSTRAR TODOS</button>
+    
+    <h1>Petición PUT</h1>
+    <p>Cambia todos los valores menos el ID</p>
+    <fieldset>
+      <legend>Modificar Ciudad</legend>
+      <form action="" id="putCiudad" name="putCiudad">
+        <label for="id-ciudad1">Ciudad Id:&nbsp; </label>
+        <input type="number" name="id-ciudad1" id="id-ciudad1" required/><br /><br />
+
+        <label for="nuevoNombre">Nombre:&nbsp; </label>
+        <input type="text" name="nuevoNombre" id="nuevoNombre" required /><br />
+        <br />
+
+        <label for="habitantes">Cantidad:&nbsp; </label>
+        <input  type="number"   name="habitantes"   id="habitantes"  required /><br /><br />
+
+        <button type="submit" class="centrado">Modificar con PUT</button>
+      </form>
+    </fieldset>
+
+    <h1>Petición PATCH</h1>
+    <p>Permite cambiar nombre, habitantes, o ambos</p>
+    <fieldset>
+      <legend>Modificar Ciudad</legend>
+      <form action="" id="patchCiudad" name="patchCiudad">
+        <label for="id-ciudad">Ciudad Id:&nbsp; </label>
+        <input  type="number"   name="id-ciudad2"  id="id-ciudad2" required  /><br /><br />
+
+        <label for="nuevoNombre2">Nombre:&nbsp; </label>
+        <input type="text" name="nuevoNombre2" id="nuevoNombre2"  /><br />
+        <br />
+
+        <label for="habitantes2">Cantidad:&nbsp; </label>
+        <input  type="number"   name="habitantes2"   id="habitantes2"   /><br /><br />
+
+
+        <button type="submit">Modificar con PATCH</button>
+        <p id="p1"></p>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Lista de Ciudades</legend>
+      <ul id="listaCiudades"></ul>
+    </fieldset>
+
+  </body>
+  <script src="app.js"></script>
+</html>
