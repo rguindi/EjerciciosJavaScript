@@ -5,20 +5,32 @@
 
 
 //AÑADIR CATEGORIAS CON FORMDATA
-document.getElementById('postCategoria').addEventListener('submit', (event) => {
-    event.preventDefault();
-    // Obtener datos del formulario
-    const datosForm = new FormData(document.getElementById('postCategoria'));
-    console.log(datosForm);
+document.getElementById('postCategoria').addEventListener('submit', async(event) => {
+  event.preventDefault();
+  // Obtener datos del formulario
+  const datosForm = new FormData(document.getElementById('postCategoria'));
+  console.log(datosForm);
 
-    const peticion= new XMLHttpRequest();
-    const url = `http://${dirIP_api}:${PUERTO_EXPRESS}/categorias`;
-    peticion.open('POST', url);
-    peticion.send(datosForm);
-    peticion.addEventListener('load', function(){
-        //procesamos los datos
-        console.log(peticion.responseText);
-    });
+  //Vamos a comprobar si ese id ya existe
+  const idCat=datosForm.get('id');
+  const datos = await getCategoria(idCat)  
+         .then(datos=>{
+          return false;
+         }).catch(error=>{
+          return true
+         });
+ if (datos){
+  const peticion= new XMLHttpRequest();
+  const url = `http://${dirIP_api}:${PUERTO_EXPRESS}/categorias`;
+  peticion.open('POST', url);
+  peticion.send(datosForm);
+  peticion.addEventListener('load', function(){
+      //procesamos los datos
+      console.log(peticion.responseText);
+  });
+}else{
+  console.log("Id ocupado, seleccione otro");
+}
 });
 
 

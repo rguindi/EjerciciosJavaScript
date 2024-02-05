@@ -5,20 +5,32 @@ const PUERTO_EXPRESS = 3000; // O asignar el valor que necesitas
 
 
 //AÑADIR CLIENTES CON FORMDATA
-document.getElementById('postCliente').addEventListener('submit', (event) => {
-    event.preventDefault();
-    // Obtener datos del formulario
-    const datosForm = new FormData(document.getElementById('postCliente'));
-    console.log(datosForm);
+document.getElementById('postCliente').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  // Obtener datos del formulario
+  const datosForm = new FormData(document.getElementById('postCliente'));
+  console.log(datosForm);
+   //Vamos a comprobar si ese id ya existe
+   const idCli=datosForm.get('id');
+   const datos = await getCliente(idCli)  
+          .then(datos=>{
+           return false;
+          }).catch(error=>{
+           return true
+          });
+  if (datos){
 
-    const peticion= new XMLHttpRequest();
-    const url = `http://${dirIP_api}:${PUERTO_EXPRESS}/clientes`;
-    peticion.open('POST', url);
-    peticion.send(datosForm);
-    peticion.addEventListener('load', function(){
-        //procesamos los datos
-        console.log(peticion.responseText);
-    });
+  const peticion= new XMLHttpRequest();
+  const url = `http://${dirIP_api}:${PUERTO_EXPRESS}/clientes`;
+  peticion.open('POST', url);
+  peticion.send(datosForm);
+  peticion.addEventListener('load', function(){
+      //procesamos los datos
+      console.log(peticion.responseText);
+  });
+}else{
+  console.log("Id ocupado, seleccione otro");
+}
 });
 
 
