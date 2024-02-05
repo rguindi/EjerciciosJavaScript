@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    min-height: calc(100vh - 200px); /* 200px es la altura estimada de header y footer */
+    padding: 10px;
+}
+
+section {
+    box-sizing: border-box;
+    width: 48%; /* Cambiar según tus necesidades de diseño */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #428a31;
+    background-color: #f9f9f9;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
