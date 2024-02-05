@@ -44,7 +44,7 @@ s1.appendChild(categorias);
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" required /><br />
         <br />
-        <button type="submit">Agregar Cliente</button>
+        <button type="submit">Agregar Cliente</button> <div id= "errorCliente"></div>
       </form>
     </fieldset>
   
@@ -76,8 +76,14 @@ s1.appendChild(categorias);
     <form action="" id="postProducto" name="postProducto">
       <label for="nombreProducto">Nombre</label>
       <input type="text" name="nombre" id="nombreProducto" required /><br />
+      <label for="catProducto">Categoria</label>
+      <input type="number" name="categoria" id="catProducto" required /><br />
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" id="precio" required /><br />
+      <label for="stock">Stock</label>
+      <input type="number" name="stock" id="stock" required /><br />
       <br />
-      <button type="submit">Agregar Producto</button>
+      <button type="submit">Agregar Producto</button><div  id="errorC"></div>
     </form>
   </fieldset>
 
@@ -117,7 +123,7 @@ s2.innerHTML += seccionProductosHTML;
       <label for="nombre">Nombre</label>
       <input type="text" name="nombre" required /><br />
       <br />
-      <button type="submit">Agregar Categoria</button>
+      <button type="submit">Agregar Categoria</button><div id= "errorCategoria"></div>
     </form>
   </fieldset>
 

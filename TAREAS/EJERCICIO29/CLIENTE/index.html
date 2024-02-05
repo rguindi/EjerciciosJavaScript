@@ -88,7 +88,7 @@
               <label for="nombre">Nombre</label>
               <input type="text" name="nombre" id="nombre" required /><br />
               <br />
-              <button type="submit" class="centrado btn btn-warning ">Agregar Cliente</button>
+              <button type="submit" class="centrado btn btn-warning ">Agregar Cliente</button><div id= "errorCliente"></div>
             </form>
           </fieldset>
 
@@ -137,8 +137,14 @@
 
             <label for="nombreProducto">Nombre</label>
             <input type="text" name="nombre" id="nombreProducto" required /><br />
+            <label for="catProducto">Categoria</label>
+            <input type="number" name="categoria" id="catProducto" required /><br />
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" required /><br />
+            <label for="stock">Stock</label>
+            <input type="numer" name="stock" id="stock" required /><br />
             <br />
-            <button type="submit" class="centrado btn btn-warning ">Agregar Producto</button>
+            <button type="submit" class="centrado btn btn-warning ">Agregar Producto</button><div  id="errorC"></div>
           </form>
         </fieldset>
 
@@ -197,7 +203,7 @@
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre"  required /><br />
             <br />
-            <button type="submit" class="centrado btn btn-warning ">Agregar Categoria</button>
+            <button type="submit" class="centrado btn btn-warning ">Agregar Categoria</button><div id= "errorCategoria"></div>
           </form>
         </fieldset>
 

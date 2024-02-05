@@ -12,8 +12,10 @@ document.getElementById('postCliente').addEventListener('submit', async (event) 
     console.log(datosForm);
      //Vamos a comprobar si ese id ya existe
      const idCli=datosForm.get('id');
+     const errorCliente = document.getElementById('errorCliente');
      const datos = await getCliente(idCli)  
             .then(datos=>{
+              errorCliente.innerText = "Id ocupado. Escoja otro.";
              return false;
             }).catch(error=>{
              return true

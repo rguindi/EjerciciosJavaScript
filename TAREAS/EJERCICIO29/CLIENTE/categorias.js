@@ -13,8 +13,10 @@ document.getElementById('postCategoria').addEventListener('submit', async(event)
 
   //Vamos a comprobar si ese id ya existe
   const idCat=datosForm.get('id');
+  const errorCategoria = document.getElementById('errorCategoria');
   const datos = await getCategoria(idCat)  
          .then(datos=>{
+          errorCategoria.innerText = "Id ocupado. Escoja otro.";
           return false;
          }).catch(error=>{
           return true

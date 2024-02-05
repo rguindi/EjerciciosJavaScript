@@ -5,8 +5,20 @@
 
 
 //AÑADIR PRODUCTOS CON FORMDATA
-document.getElementById('postProducto').addEventListener('submit', (event) => {
+document.getElementById('postProducto').addEventListener('submit', async(event) => {
     event.preventDefault();
+    
+    //Vamos a comprobar si existe la categoría antes de insertar el producto
+    let cat = document.getElementById('catProducto').value;
+    let errorC = document.getElementById('errorC');
+  try {
+    let res = await getCategoria(cat);
+  }catch(e){
+    errorC.innerText = 'No existe esa categoría, escoja otra.';
+    return;
+  }
+   
+
     // Obtener datos del formulario
     const datosForm = new FormData(document.getElementById('postProducto'));
     console.log(datosForm);
