@@ -9,7 +9,12 @@ const multer=require('multer');
 
 const path = require('path');
 // Especifica la carpeta que contiene los archivos estáticos (por ejemplo, imágenes, CSS, JS)
-app.use('/', express.static(path.join(__dirname, 'Public')));
+app.use('/', express.static(path.join(__dirname, './Public')));
+
+//indico ahora q archivo quiero q se ejecute en cada ruta
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'tarea030.html'));
+});
 
 app.use(cors());
 

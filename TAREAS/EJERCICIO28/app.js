@@ -1,4 +1,4 @@
-const dirIP_api = '192.168.1.134'; // O asignar el valor que necesitas
+const dirIP_api = '192.168.7.104'; // O asignar el valor que necesitas
 const PUERTO_EXPRESS = 3000; // O asignar el valor que necesitas
 
 //DECLARACION DE VARIABLES
