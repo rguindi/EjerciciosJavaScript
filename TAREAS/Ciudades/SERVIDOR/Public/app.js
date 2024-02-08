@@ -14,6 +14,8 @@ const Form2 = document.getElementById('form2');
 
 Form1.addEventListener('submit', async (event) => { 
     event.preventDefault(); 
+      validarForm1();
+      if(Form1.checkValidity()){
           const datos = await buscaId(idBusca.value)  
            .then(datos=>{
             id.value = datos.id;
@@ -22,7 +24,9 @@ Form1.addEventListener('submit', async (event) => {
            }).catch(error=>{
             console.log("mal"+error)
            })
+          }
   }) 
+
 async function buscaId(id) { 
     const response = await fetch(`http://${dirIP_api}:${PUERTO_EXPRESS}/ciudades/` + id) 
     try {
@@ -57,6 +61,10 @@ async function putCiudad(datos, id) {
   
 Form2.addEventListener('submit', async (event) => {
     event.preventDefault();
+    validarForm2();
+    if(Form2.checkValidity()){
+
+    
   
     // Insertamos los valores de los campos input en un objeto nuevaCiudad
     const nuevaCiudad = {
@@ -72,5 +80,43 @@ Form2.addEventListener('submit', async (event) => {
      .catch(error=>{
       console.log("mal"+error)
      })
+    }
   });
   
+
+
+
+
+//VALIDACIONES DE FORMULARIOS
+  function mostrarError(idError,mensaje){
+    document.getElementById(idError).textContent=mensaje;
+}
+
+function limpiarErrores(form){
+    let elementosError= Array.from(form.getElementsByClassName('error'));
+    elementosError.forEach(element => {
+        element.textContent='';
+    });
+}
+
+
+function validarForm1(){
+  limpiarErrores(Form1);
+    if(!idBusca.checkValidity()){
+        mostrarError('errorId',idBusca.validationMessage);
+    }
+}
+
+
+function validarForm2(){
+  limpiarErrores(Form2);
+    if(!nombre.checkValidity()){
+        mostrarError('errorNombre',nombre.validationMessage);
+    }
+    if(!cantidad.checkValidity()){
+        mostrarError('errorCantidad',cantidad.validationMessage);
+    }
+}
+
+
+
