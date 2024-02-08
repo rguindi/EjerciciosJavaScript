@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+        <h2>Formulario de Alta de Alumno</h2>
+   
+        <form novalidate id="registroForm" nombre="f1">
+
+
+
+            <label for="matricula">Numero de matricula:</label>
+            <input type="text" id="matricula" name="matricula" disabled>
+            <br>
+
+            <label for="grupo">Grupo de Clase en el Curso Actual</label>
+            <select name="grupo" id="grupo" required>
+                <option value="">Seleccione Un grupo</option>
+                <option value="ASIR1">ASIR1</option>
+                <option value="ASIR2">ASIR2</option>
+                <option value="DAM1">DAM1</option>
+                <option value="DAM2">DAM2</option>
+                <option value="DAW1">DAW1</option>
+                <option value="DAW2">DAW2</option>
+            </select>
+            <span id="errorGrupo" class="error"></span>
+
+            <br>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" >
+            <span id="errordni" class="error"></span>
+            <span id="errordniformato" class="error"></span>
+            <br>
+
+   
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <span id="errorNombre" class="error"></span>
+            <br>
+   
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <span id="errorApellidos" class="error"></span>
+            <br>
+   
+            <label for="codigo">Codigo de Alumno:</label>
+            <input type="text" id="codigo" name="codigo" readonly>
+            <br>
+
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <span id="errorFecha" class="error"></span>
+            <br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="errorEmail" class="error"></span>
+            <br>
+
+            <label for="usuario">Nombre de Usuario:</label>
+            <input type="usuario" id="usuario" name="usuario" required>
+            <span id="errorUsuario" class="error"></span>
+            <br>
+
+            <label for="pass">Contraseña:</label>
+            <input type="pass" id="pass" name="pass" readonly>
+            <span id="errorPass" class="error"></span>
+            <br>
+
+
+
+
+
+            <br>
+   
+            <input type="submit" value="Guardar Alumno" id="botonReg">
+        </form>
+
+        <div id="imprimir"></div>
+        <script src="validacion.js"></script>
+</body>
+</html>

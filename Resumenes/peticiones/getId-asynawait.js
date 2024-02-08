@@ -1,5 +1,8 @@
 const dirIP_api = '192.168.7.104'; // O asignar el valor que necesitas
 const PUERTO_EXPRESS = 3000; // O asignar el valor que necesitas
+
+
+
 //BUSCAR POR ID. ASYNC AWAY
 const pintarCategoria = document.getElementById('listaCategorias');
 document.getElementById('categoriaId').addEventListener('submit', async (event) => { 

@@ -1,0 +1,17 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr, td{
+    border: solid;
+ 
+}
+
+td{
+  justify-content: end;
+}
+
+form{
+  margin-bottom: 30px;
+}
