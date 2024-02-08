@@ -14,12 +14,9 @@ const getCiudades = (req,res)=>{         //localhost:3000/ciudades
 
 const getCiudadById = (req, res) => { //http://localhost:3000/ciudades/registro/3
     const idRegistro = req.params.id;
-   
-
-    
  
     // Consulta a la base de datos para obtener el registro por ID
-    db.query('SELECT * FROM ciudades WHERE nombre like ? ', [idRegistro], (err, resultados) => {
+    db.query('SELECT * FROM ciudades WHERE id = ? ', [idRegistro], (err, resultados) => {
       if (err) {
         console.error('Error al obtener el registro desde la base de datos:', err);
         res.status(500).json({ error: 'Error interno del servidor' });
@@ -27,6 +24,26 @@ const getCiudadById = (req, res) => { //http://localhost:3000/ciudades/registro/
         // Verifica si se encontró un registro
         if (resultados.length > 0) {
           res.json(resultados[0]); // Devuelve el primer resultado encontrado (debería ser único)
+        } else {
+          res.status(404).json({ error: 'Registro no encontrado' });
+        }
+      }
+    });
+  };
+
+
+const getCiudadByNombre = (req, res) => { //http://localhost:3000/ciudades/nombre/3
+        const nombreCiudad = req.params.nombre;
+     
+        // Consulta a la base de datos para obtener el registro por nombre
+        db.query('SELECT * FROM ciudades WHERE nombre LIKE ?', [`${nombreCiudad}%`], (err, resultados) => {
+          if (err) {
+        console.error('Error al obtener el registro desde la base de datos:', err);
+        res.status(500).json({ error: 'Error interno del servidor' });
+      } else {
+        // Verifica si se encontró un registro
+        if (resultados.length > 0) {
+          res.json(resultados); 
         } else {
           res.status(404).json({ error: 'Registro no encontrado' });
         }
@@ -170,6 +187,7 @@ module.exports={
     patchCiudad,
     actualizarCiudad,
     deleteCiudad,
-    getCiudadesByHabitantes
+    getCiudadesByHabitantes,
+    getCiudadByNombre
 
 };
